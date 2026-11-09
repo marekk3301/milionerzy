@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            <!-- Utilities (Sound, Walk Away, Restart) -->
+            <!-- Utilities (Sound, Walk Away, Restart, Reset Pool) -->
             <div class="header-actions">
                 <button id="btn-sound" class="btn-icon" title="Włącz / wyłącz dźwięk">
                     <span id="sound-icon">🔊</span>
@@ -70,8 +70,11 @@
                 <button id="btn-walkaway" class="btn-secondary" title="Zakończ grę i zachowaj zdobyte punkty">
                     💾 Zachowaj punkty
                 </button>
-                <button id="btn-restart" class="btn-secondary" title="Zacznij nową grę">
+                <button id="btn-restart" class="btn-secondary" title="Zacznij nową grę dla kolejnego gracza">
                     🔄 Nowa gra
+                </button>
+                <button id="btn-reset-pool" class="btn-secondary btn-reset-pool" title="Zresetuj pulę pytań (odkreśl wszystkie zadane pytania)">
+                    🗑️ Reset sesji (<span id="used-questions-count">0</span>/<span id="total-questions-count">200</span>)
                 </button>
             </div>
         </header>

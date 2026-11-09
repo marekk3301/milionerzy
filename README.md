@@ -56,9 +56,11 @@ A następnie otwórz w przeglądarce: [http://localhost:3000](http://localhost:3
    - Dźwięki: odkrywanie odpowiedzi, kliknięcie zaznaczenia, napięcie/suspens, poprawna odpowiedź, błąd, użycie koła ratunkowego oraz wielka fanfara wygranej 1 000 000 zł.
    - Możliwość wyciszenia/włączenia dźwięku przyciskiem 🔊 / 🔇 w nagłówku.
 
-6. **Rezygnacja i Nowa gra**:
-   - W dowolnym momencie przed zaznaczeniem błędnej odpowiedzi możesz kliknąć **„💰 Rezygnuj”**, aby bezpiecznie odejść ze studia ze zgromadzoną dotychczas kwotą.
-   - Przycisk **„🔄 Nowa gra”** pozwala zacząć rozgrywkę od początku w dowolnym momencie.
+6. **Zarządzanie pulą pytań i pamięć sesji**:
+   - Po wylosowaniu pytanie jest automatycznie **wykreślane z puli** i zapisywane w `localStorage`, dzięki czemu kolejny gracz nie trafi na te same pytania.
+   - Pula pytań nie znika po odświeżeniu strony ani po zamknięciu przeglądarki.
+   - W nagłówku znajduje się przycisk **„🗑️ Reset sesji (X/200)”**, który pozwala jednym kliknięciem odkreślić wszystkie zadane pytania i zresetować pulę.
+   - W dowolnym momencie przed zaznaczeniem błędnej odpowiedzi można kliknąć **„💾 Zachowaj punkty”**, aby bezpiecznie odejść ze zdobytymi punktami, lub **„🔄 Nowa gra”**, aby rozpocząć grę dla kolejnego gracza.
 
 ---
 

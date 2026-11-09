@@ -23,6 +23,9 @@
         12: 10
     };
 
+    // Storage key for persistent asked questions
+    const STORAGE_KEY = 'swb_milionerzy_used_questions';
+
     // Game State
     const state = {
         allQuestions: [],
@@ -53,6 +56,9 @@
         soundIcon: document.getElementById('sound-icon'),
         btnWalkaway: document.getElementById('btn-walkaway'),
         btnRestart: document.getElementById('btn-restart'),
+        btnResetPool: document.getElementById('btn-reset-pool'),
+        usedQuestionsCount: document.getElementById('used-questions-count'),
+        totalQuestionsCount: document.getElementById('total-questions-count'),
 
         // Stage Header
         currentQuestionNum: document.getElementById('current-question-num'),
@@ -123,7 +129,71 @@
         renderLadder();
         attachEventListeners();
         await loadQuestionsData();
+        loadUsedQuestions();
         startNewGame();
+    }
+
+    /**
+     * Load persistent used questions from localStorage
+     */
+    function loadUsedQuestions() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved) {
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed)) {
+                    state.usedQuestionIds = new Set(parsed);
+                }
+            }
+        } catch (e) {
+            console.warn('Could not read localStorage:', e);
+            state.usedQuestionIds = new Set();
+        }
+        updateUsedQuestionsDisplay();
+    }
+
+    /**
+     * Save used questions to localStorage
+     */
+    function saveUsedQuestions() {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(state.usedQuestionIds)));
+        } catch (e) {
+            console.warn('Could not save to localStorage:', e);
+        }
+        updateUsedQuestionsDisplay();
+    }
+
+    /**
+     * Update counter badge in the header
+     */
+    function updateUsedQuestionsDisplay() {
+        if (dom.usedQuestionsCount) {
+            dom.usedQuestionsCount.textContent = state.usedQuestionIds.size;
+        }
+        if (dom.totalQuestionsCount) {
+            dom.totalQuestionsCount.textContent = state.allQuestions.length || 200;
+        }
+    }
+
+    /**
+     * Reset session / uncross all used questions
+     */
+    function resetSessionQuestions() {
+        const count = state.usedQuestionIds.size;
+        const total = state.allQuestions.length || 200;
+
+        if (!confirm(`Czy na pewno chcesz zresetować pulę pytań?\nWykorzystano już: ${count} z ${total} pytań.\nWszystkie pytania zostaną odkreślone i znów będą mogły być wylosowane.`)) {
+            return;
+        }
+
+        state.usedQuestionIds.clear();
+        try {
+            localStorage.removeItem(STORAGE_KEY);
+        } catch (e) {}
+
+        updateUsedQuestionsDisplay();
+        alert('Pula pytań została pomyślnie zresetowana!');
     }
 
     /**
@@ -161,15 +231,17 @@
                 state.questionsByLevel[q.poziom].push(q);
             }
         });
+
+        updateUsedQuestionsDisplay();
     }
 
     /**
-     * Start a fresh new game session
+     * Start a fresh new game session for the player
+     * (used questions are preserved across games until manually reset)
      */
     function startNewGame() {
         stopConfetti();
         state.currentLevel = 1;
-        state.usedQuestionIds.clear();
         state.isGameOver = false;
         state.lifelines = {
             fiftyFifty: true,
@@ -192,7 +264,7 @@
     }
 
     /**
-     * Pick and load a random question for the given level
+     * Pick and load a random unused question for the given level
      */
     function loadQuestionForLevel(level) {
         state.currentLevel = level;
@@ -202,9 +274,15 @@
         state.isSuspenseRunning = false;
         state.eliminatedKeys.clear();
 
-        // Filter out questions already used in this game
-        const pool = (state.questionsByLevel[level] || []).filter(q => !state.usedQuestionIds.has(q.id));
-        const availablePool = pool.length > 0 ? pool : (state.questionsByLevel[level] || []);
+        // Filter out questions already used in this session/localStorage
+        let availablePool = (state.questionsByLevel[level] || []).filter(q => !state.usedQuestionIds.has(q.id));
+
+        // If all questions for this specific level were already used, auto-release this level's questions
+        if (availablePool.length === 0 && (state.questionsByLevel[level] || []).length > 0) {
+            (state.questionsByLevel[level] || []).forEach(q => state.usedQuestionIds.delete(q.id));
+            saveUsedQuestions();
+            availablePool = state.questionsByLevel[level] || [];
+        }
 
         if (availablePool.length === 0) {
             alert('Brak pytań dla poziomu ' + level);
@@ -214,6 +292,7 @@
         const randomIndex = Math.floor(Math.random() * availablePool.length);
         const question = availablePool[randomIndex];
         state.usedQuestionIds.add(question.id);
+        saveUsedQuestions();
         state.currentQuestion = question;
 
         // Update UI
@@ -701,10 +780,11 @@
 
         dom.btnWalkaway.addEventListener('click', handleWalkAway);
         dom.btnRestart.addEventListener('click', () => {
-            if (confirm('Czy na pewno chcesz rozpocząć nową grę od 1 poziomu?')) {
+            if (confirm('Czy na pewno chcesz rozpocząć nową grę dla kolejnego gracza?')) {
                 startNewGame();
             }
         });
+        dom.btnResetPool.addEventListener('click', resetSessionQuestions);
 
         dom.modalBtnRestart.addEventListener('click', () => {
             startNewGame();

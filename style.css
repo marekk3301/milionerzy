@@ -332,6 +332,17 @@ html, body {
     transform: translateY(-2px);
 }
 
+.btn-reset-pool {
+    border-color: rgba(255, 179, 0, 0.35);
+    color: #ffe082;
+}
+
+.btn-reset-pool:hover {
+    background: rgba(255, 179, 0, 0.15);
+    border-color: var(--tv-gold);
+    color: #ffffff;
+}
+
 /* ==========================================================================
    GAME ARENA (STAGE + SIDEBAR)
    ========================================================================== */
