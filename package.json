@@ -1,0 +1,17 @@
+{
+  "name": "swb-milionerzy",
+  "version": "1.0.0",
+  "description": "Gra Milionerzy - Podstawy Techniki Cyfrowej",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "milionerzy",
+    "game",
+    "quiz",
+    "technika-cyfrowa"
+  ],
+  "author": "",
+  "license": "ISC"
+}

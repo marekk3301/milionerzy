@@ -1,0 +1,3 @@
+@echo off
+echo Uruchamianie gry Milionerzy...
+start index.html
