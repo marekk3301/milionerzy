@@ -67,8 +67,8 @@
                 <button id="btn-sound" class="btn-icon" title="Włącz / wyłącz dźwięk">
                     <span id="sound-icon">🔊</span>
                 </button>
-                <button id="btn-walkaway" class="btn-secondary" title="Zrezygnuj i weź wygrane pieniądze">
-                    💰 Rezygnuj
+                <button id="btn-walkaway" class="btn-secondary" title="Zakończ grę i zachowaj zdobyte punkty">
+                    💾 Zachowaj punkty
                 </button>
                 <button id="btn-restart" class="btn-secondary" title="Zacznij nową grę">
                     🔄 Nowa gra
@@ -86,7 +86,7 @@
                         Pytanie <span id="current-question-num">1</span> / 12
                     </div>
                     <div class="badge badge-prize">
-                        Gra o: <span id="current-question-prize">500 zł</span>
+                        Gra o: <span id="current-question-prize">1 pkt</span>
                     </div>
                     <div class="badge badge-category">
                         Kategoria: <span id="current-category">Podstawy</span>
@@ -196,11 +196,6 @@
                             ...
                         </p>
                     </div>
-
-                    <!-- Feedback message toast -->
-                    <div id="toast-message" class="toast-message">
-                        Wciśnij <strong>Spację</strong>, aby odkrywać kolejne warianty odpowiedzi!
-                    </div>
                 </div>
             </section>
 
@@ -208,15 +203,15 @@
             <aside class="sidebar-section">
                 <div class="ladder-card">
                     <div class="ladder-header">
-                        <h2>DRABINKA NAGRÓD</h2>
+                        <h2>DRABINKA PUNKTÓW</h2>
                         <div class="ladder-stats">
                             <div class="stat-item">
-                                <span class="stat-label">Wygrana:</span>
-                                <span class="stat-value" id="stat-current-win">0 zł</span>
+                                <span class="stat-label">Punkty:</span>
+                                <span class="stat-value" id="stat-current-win">0 pkt</span>
                             </div>
                             <div class="stat-item">
-                                <span class="stat-label">Gwarantowana:</span>
-                                <span class="stat-value guaranteed-color" id="stat-guaranteed-win">0 zł</span>
+                                <span class="stat-label">Gwarantowane:</span>
+                                <span class="stat-value guaranteed-color" id="stat-guaranteed-win">0 pkt</span>
                             </div>
                         </div>
                     </div>
@@ -229,7 +224,7 @@
                     <div class="ladder-legend">
                         <div class="legend-row">
                             <span class="legend-bullet guaranteed-badge">🔒</span>
-                            <span>Progi gwarantowane: <strong>1 000 zł</strong> oraz <strong>40 000 zł</strong></span>
+                            <span>Progi gwarantowane: <strong>1 pkt</strong> oraz <strong>4 pkt</strong></span>
                         </div>
                     </div>
                 </div>
@@ -242,8 +237,8 @@
         <div class="modal-window" id="modal-window">
             <div class="modal-icon" id="modal-icon">🏆</div>
             <h2 class="modal-title" id="modal-title">GRATULACJE!</h2>
-            <div class="modal-prize" id="modal-prize">1 000 000 zł</div>
-            <p class="modal-desc" id="modal-desc">Zostałeś Milionerem w technice cyfrowej!</p>
+            <div class="modal-prize" id="modal-prize">10 pkt</div>
+            <p class="modal-desc" id="modal-desc">Zdobyłeś maksymalną liczbę 10 punktów z techniki cyfrowej!</p>
             <div class="modal-actions">
                 <button id="modal-btn-restart" class="btn-action">Zagraj ponownie</button>
             </div>

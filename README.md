@@ -24,12 +24,12 @@ A następnie otwórz w przeglądarce: [http://localhost:3000](http://localhost:3
 
 ## 🎮 Zasady i Funkcje Gry
 
-1. **Drabinka wygranych (po prawej stronie)**:
-   - 12 poziomów pytań od 500 zł do **1 000 000 zł**.
+1. **Drabinka punktów (po prawej stronie)**:
+   - 12 poziomów pytań od 1 pkt do **10 pkt**.
    - Progi gwarantowane:
-     - Poziom 2: **1 000 zł** 🔒
-     - Poziom 7: **40 000 zł** 🔒
-     - Poziom 12: **1 000 000 zł** 👑
+     - Poziom 2: **1 pkt** 🔒
+     - Poziom 7: **4 pkt** 🔒
+     - Poziom 12: **10 pkt** 👑
    - Aktualny poziom jest dynamicznie podświetlony pulsującą, pomarańczową belką z symbolem `◆`.
 
 2. **Odkrywanie odpowiedzi krok po kroku**:

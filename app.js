@@ -6,21 +6,21 @@
 (function () {
     'use strict';
 
-    // Game Configuration & Prize Ladder definitions
+    // Game Configuration & Prize Ladder definitions (Points scale 1-10)
     const GUARANTEED_LEVELS = [2, 7, 12];
     const PRIZES = {
-        1: 500,
-        2: 1000,
-        3: 2000,
-        4: 5000,
-        5: 10000,
-        6: 20000,
-        7: 40000,
-        8: 75000,
-        9: 125000,
-        10: 250000,
-        11: 500000,
-        12: 1000000
+        1: 1,
+        2: 1,
+        3: 2,
+        4: 2,
+        5: 3,
+        6: 3,
+        7: 4,
+        8: 5,
+        9: 6,
+        10: 7,
+        11: 8,
+        12: 10
     };
 
     // Game State
@@ -91,7 +91,6 @@
         btnNextQuestion: document.getElementById('btn-next-question'),
         explanationBox: document.getElementById('explanation-box'),
         explanationContent: document.getElementById('explanation-content'),
-        toastMessage: document.getElementById('toast-message'),
 
         // Ladder & Stats
         ladderList: document.getElementById('ladder-list'),
@@ -111,10 +110,10 @@
     };
 
     /**
-     * Format numbers into Polish currency string: e.g. 1 000 000 zł
+     * Format points string: e.g. 10 pkt
      */
-    function formatCurrency(amount) {
-        return amount.toLocaleString('pl-PL') + ' zł';
+    function formatPoints(amount) {
+        return amount + ' pkt';
     }
 
     /**
@@ -141,7 +140,7 @@
             if (window.MILIONERZY_DATA && window.MILIONERZY_DATA.pytania) {
                 processQuestions(window.MILIONERZY_DATA.pytania);
             } else {
-                showToast('Błąd ładowania pytań z pliku JSON.');
+                console.error('Błąd ładowania pytań z pliku JSON.');
             }
         }
     }
@@ -219,7 +218,7 @@
 
         // Update UI
         dom.currentQuestionNum.textContent = level;
-        dom.currentQuestionPrize.textContent = formatCurrency(PRIZES[level]);
+        dom.currentQuestionPrize.textContent = formatPoints(PRIZES[level]);
         dom.currentCategory.textContent = question.kategoria || 'Ogólne';
         dom.questionText.textContent = question.pytanie;
 
@@ -243,7 +242,6 @@
         dom.btnRevealNext.disabled = false;
         dom.btnRevealAll.disabled = false;
 
-        showToast('Wciśnij Spację lub przycisk, aby odkryć warianty odpowiedzi!');
         updateLadderDisplay();
     }
 
@@ -277,9 +275,6 @@
         if (state.revealedCount === 4) {
             dom.btnRevealNext.disabled = true;
             dom.btnRevealAll.disabled = true;
-            showToast('Wszystkie odpowiedzi odkryte! Wybierz swoją odpowiedź (kliknij lub A, B, C, D).');
-        } else {
-            showToast(`Odkryto odpowiedź ${keyToReveal}. Wciśnij Spację, aby odkryć kolejną.`);
         }
     }
 
@@ -312,7 +307,6 @@
         updateRevealStatus();
         dom.btnRevealNext.disabled = true;
         dom.btnRevealAll.disabled = true;
-        showToast('Wszystkie odpowiedzi odkryte! Wybierz jedną z opcji.');
     }
 
     /**
@@ -356,7 +350,6 @@
 
         // Show confirmation button
         dom.btnConfirmAnswer.classList.remove('hidden');
-        showToast(`Wybrano odpowiedź ${key}. Czy zaznaczamy ostatecznie?`);
     }
 
     /**
@@ -367,7 +360,6 @@
 
         state.isSuspenseRunning = true;
         dom.btnConfirmAnswer.classList.add('hidden');
-        showToast('Trwa sprawdzanie odpowiedzi...');
 
         if (window.soundEngine) {
             window.soundEngine.playSuspense();
@@ -409,9 +401,7 @@
                 window.soundEngine.playCorrect();
             }
 
-            showToast(`BRAWO! Odpowiedź ${state.selectedAnswer} jest poprawna!`);
-
-            // If player won 1 000 000 zł
+            // If player won 1 000 000 zł (10 pkt)
             if (state.currentLevel === 12) {
                 setTimeout(() => {
                     handleGameVictory();
@@ -433,8 +423,6 @@
                 window.soundEngine.playWrong();
             }
 
-            showToast(`Niestety, to błąd! Prawidłowa odpowiedź to ${correctKey}.`);
-
             setTimeout(() => {
                 handleGameOver(false);
             }, 1800);
@@ -454,20 +442,21 @@
     }
 
     /**
-     * Calculate guaranteed prize won so far
+     * Calculate guaranteed points won so far
      */
     function calculateGuaranteedPrize() {
         const completedLevel = state.isAnswerConfirmed && (state.selectedAnswer === state.currentQuestion.poprawna)
             ? state.currentLevel
             : state.currentLevel - 1;
 
-        if (completedLevel >= 7) return 40000;
-        if (completedLevel >= 2) return 1000;
+        if (completedLevel >= 12) return 10;
+        if (completedLevel >= 7) return 4;
+        if (completedLevel >= 2) return 1;
         return 0;
     }
 
     /**
-     * Calculate accumulated prize (value of the last passed level)
+     * Calculate accumulated points (value of the last passed level)
      */
     function calculateCurrentPrize() {
         const completedLevel = state.isAnswerConfirmed && (state.selectedAnswer === state.currentQuestion.poprawna)
@@ -502,7 +491,7 @@
 
             const prizeSpan = document.createElement('span');
             prizeSpan.className = 'ladder-prize';
-            prizeSpan.textContent = formatCurrency(PRIZES[lvl]);
+            prizeSpan.textContent = formatPoints(PRIZES[lvl]);
 
             li.appendChild(numSpan);
             li.appendChild(diamondSpan);
@@ -519,8 +508,8 @@
         const currentWin = calculateCurrentPrize();
         const guaranteedWin = calculateGuaranteedPrize();
 
-        dom.statCurrentWin.textContent = formatCurrency(currentWin);
-        dom.statGuaranteedWin.textContent = formatCurrency(guaranteedWin);
+        dom.statCurrentWin.textContent = formatPoints(currentWin);
+        dom.statGuaranteedWin.textContent = formatPoints(guaranteedWin);
 
         for (let lvl = 1; lvl <= 12; lvl++) {
             const item = document.getElementById('ladder-level-' + lvl);
@@ -571,8 +560,6 @@
                 dom.btnConfirmAnswer.classList.add('hidden');
             }
         });
-
-        showToast(`Koło 50:50 odrzuciło dwie błędne odpowiedzi: ${eliminated.join(' oraz ')}!`);
     }
 
     /**
@@ -589,8 +576,6 @@
         if (window.soundEngine) {
             window.soundEngine.playLifeline();
         }
-
-        showToast('📞 Wykorzystano koło: Telefon do przyjaciela (koło zużyte).');
     }
 
     /**
@@ -607,29 +592,27 @@
         if (window.soundEngine) {
             window.soundEngine.playLifeline();
         }
-
-        showToast('👥 Wykorzystano koło: Pytanie do publiczności (koło zużyte).');
     }
 
     /**
-     * Handle Walk Away (Rezygnacja i zabranie wygranej)
+     * Handle Walk Away (Rezygnacja i zachowanie punktów)
      */
     function handleWalkAway() {
         if (state.isGameOver || state.isSuspenseRunning) return;
 
-        const prizeWon = calculateCurrentPrize();
-        const confirmMsg = prizeWon > 0
-            ? `Czy na pewno chcesz zrezygnować i odejść z kwotą ${formatCurrency(prizeWon)}?`
-            : `Nie zdobyłeś jeszcze żadnej nagrody. Czy na pewno chcesz zakończyć grę?`;
+        const pointsWon = calculateCurrentPrize();
+        const confirmMsg = pointsWon > 0
+            ? `Czy na pewno chcesz zakończyć grę i zachować ${formatPoints(pointsWon)}?`
+            : `Nie zdobyłeś jeszcze punktów. Czy na pewno chcesz zakończyć grę?`;
 
         if (!confirm(confirmMsg)) return;
 
         state.isGameOver = true;
         showModal({
-            icon: '💰',
-            title: 'REZYGNACJA',
-            prize: formatCurrency(prizeWon),
-            desc: `Postanowiłeś zachować wygraną i opuścić studio z kwotą ${formatCurrency(prizeWon)}!`
+            icon: '💾',
+            title: 'ZAKOŃCZENIE GRY',
+            prize: formatPoints(pointsWon),
+            desc: `Postanowiłeś zakończyć grę ze zdobytą liczbą ${formatPoints(pointsWon)}!`
         });
     }
 
@@ -643,15 +626,15 @@
         showModal({
             icon: '❌',
             title: 'KONIEC GRY',
-            prize: formatCurrency(guaranteed),
+            prize: formatPoints(guaranteed),
             desc: guaranteed > 0
-                ? `Opuszczasz grę z gwarantowaną kwotą ${formatCurrency(guaranteed)}!`
-                : `Niestety, kończysz grę bez nagrody finansowej. Spróbuj jeszcze raz!`
+                ? `Kończysz grę ze zdobytą liczbą gwarantowaną: ${formatPoints(guaranteed)}!`
+                : `Niestety, kończysz grę z 0 pkt. Spróbuj jeszcze raz!`
         });
     }
 
     /**
-     * Handle Grand Victory (1 000 000 zł)
+     * Handle Grand Victory (10 pkt)
      */
     function handleGameVictory() {
         state.isGameOver = true;
@@ -663,9 +646,9 @@
 
         showModal({
             icon: '👑',
-            title: 'MILIONER!',
-            prize: '1 000 000 zł',
-            desc: 'Niesamowite! Odpowiedziałeś poprawnie na wszystkie 12 pytań i zdobyłeś główną nagrodę!'
+            title: 'MISTRZ!',
+            prize: '10 pkt',
+            desc: 'Niesamowite! Odpowiedziałeś poprawnie na wszystkie 12 pytań i zdobyłeś maksymalne 10 punktów!'
         });
     }
 
@@ -682,13 +665,6 @@
 
     function hideModal() {
         dom.modalContainer.classList.add('hidden');
-    }
-
-    /**
-     * Temporary Toast message
-     */
-    function showToast(msg) {
-        dom.toastMessage.innerHTML = msg;
     }
 
     /**
