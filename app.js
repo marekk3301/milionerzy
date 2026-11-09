@@ -25,6 +25,7 @@
 
     // Storage key for persistent asked questions
     const STORAGE_KEY = 'swb_milionerzy_used_questions';
+    const CUSTOM_QUESTIONS_KEY = 'swb_milionerzy_custom_questions';
 
     // Game State
     const state = {
@@ -65,6 +66,16 @@
         currentQuestionPrize: document.getElementById('current-question-prize'),
         currentCategory: document.getElementById('current-category'),
         questionText: document.getElementById('question-text'),
+
+        // Question Image & Lightbox
+        questionImageBox: document.getElementById('question-image-box'),
+        questionImage: document.getElementById('question-image'),
+        questionImageFrame: document.getElementById('question-image-frame'),
+        imageLightbox: document.getElementById('image-lightbox'),
+        lightboxImg: document.getElementById('lightbox-img'),
+        lightboxCaption: document.getElementById('lightbox-caption'),
+        lightboxClose: document.getElementById('lightbox-close'),
+        lightboxOverlay: document.getElementById('lightbox-overlay'),
 
         // Reveal Controls
         revealDots: {
@@ -197,9 +208,24 @@
     }
 
     /**
-     * Load questions from JSON file with fallback to bundled window.MILIONERZY_DATA
+     * Load questions: first checks customized questions in localStorage, then fetch/bundled data
      */
     async function loadQuestionsData() {
+        // 1. Check custom edited questions in localStorage
+        try {
+            const customData = localStorage.getItem(CUSTOM_QUESTIONS_KEY);
+            if (customData) {
+                const parsed = JSON.parse(customData);
+                if (Array.isArray(parsed) && parsed.length > 0) {
+                    processQuestions(parsed);
+                    return;
+                }
+            }
+        } catch (e) {
+            console.warn('Could not read custom questions:', e);
+        }
+
+        // 2. Load from JSON file with fallback to bundled window.MILIONERZY_DATA
         try {
             const response = await fetch('milionerzy.json');
             if (!response.ok) throw new Error('HTTP ' + response.status);
@@ -300,6 +326,16 @@
         dom.currentQuestionPrize.textContent = formatPoints(PRIZES[level]);
         dom.currentCategory.textContent = question.kategoria || 'Ogólne';
         dom.questionText.textContent = question.pytanie;
+
+        // Image display handling
+        if (question.obrazek && dom.questionImageBox && dom.questionImage) {
+            dom.questionImage.src = question.obrazek;
+            dom.questionImage.alt = question.pytanie;
+            dom.questionImageBox.classList.remove('hidden');
+        } else if (dom.questionImageBox) {
+            dom.questionImageBox.classList.add('hidden');
+            if (dom.questionImage) dom.questionImage.src = '';
+        }
 
         // Reset answers display
         ['A', 'B', 'C', 'D'].forEach(key => {
@@ -747,6 +783,23 @@
     }
 
     /**
+     * Lightbox for question images
+     */
+    function openImageLightbox() {
+        if (!state.currentQuestion || !state.currentQuestion.obrazek || !dom.imageLightbox) return;
+        dom.lightboxImg.src = state.currentQuestion.obrazek;
+        dom.lightboxCaption.textContent = state.currentQuestion.pytanie + 
+            (state.currentQuestion.zrodlo_obrazka ? ` (Źródło: ${state.currentQuestion.zrodlo_obrazka})` : '');
+        dom.imageLightbox.classList.remove('hidden');
+    }
+
+    function closeImageLightbox() {
+        if (dom.imageLightbox) {
+            dom.imageLightbox.classList.add('hidden');
+        }
+    }
+
+    /**
      * Keyboard and Click Event Handlers
      */
     function attachEventListeners() {
@@ -790,6 +843,17 @@
             startNewGame();
         });
 
+        // Lightbox events
+        if (dom.questionImageFrame) {
+            dom.questionImageFrame.addEventListener('click', openImageLightbox);
+        }
+        if (dom.lightboxClose) {
+            dom.lightboxClose.addEventListener('click', closeImageLightbox);
+        }
+        if (dom.lightboxOverlay) {
+            dom.lightboxOverlay.addEventListener('click', closeImageLightbox);
+        }
+
         // Global Keyboard Shortcuts
         window.addEventListener('keydown', handleGlobalKeydown);
     }
@@ -802,6 +866,12 @@
      * - Keys A, B, C, D (or 1, 2, 3, 4): Select answer
      */
     function handleGlobalKeydown(e) {
+        // Escape closes lightbox
+        if (e.key === 'Escape' && dom.imageLightbox && !dom.imageLightbox.classList.contains('hidden')) {
+            closeImageLightbox();
+            return;
+        }
+
         if (state.isGameOver || state.isSuspenseRunning) return;
 
         // Space key: reveal next answer OR advance to next question

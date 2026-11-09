@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#040612">
+    <title>Edytor Pytań - Milionerzy</title>
+    
+    <!-- Favicon & Fonts -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2306112d' stroke='%2300d2ff' stroke-width='4'/><polygon points='50,15 80,50 50,85 20,50' fill='%23ffb300'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient Studio Lights -->
+    <div class="studio-ambient">
+        <div class="spotlight spot-center"></div>
+        <div class="spotlight spot-left"></div>
+        <div class="spotlight spot-right"></div>
+    </div>
+
+    <div class="editor-container">
+        <!-- Editor Header -->
+        <header class="app-header editor-header">
+            <div class="brand">
+                <div class="logo-badge">
+                    <span class="logo-inner">✏️</span>
+                </div>
+                <div class="brand-text">
+                    <h1 class="logo-title">EDYTOR PYTAŃ</h1>
+                    <p class="logo-subtitle">Zarządzanie bazą pytań Milionerów</p>
+                </div>
+            </div>
+
+            <div class="editor-header-stats">
+                <span class="stat-badge">Baza: <strong id="stat-total-count">0</strong> pytań</span>
+                <span class="stat-badge">Z grafiką: <strong id="stat-img-count">0</strong></span>
+            </div>
+
+            <div class="header-actions">
+                <a href="index.html" class="btn-secondary" title="Wróć do gry">
+                    🎮 Wróć do gry
+                </a>
+                <button id="btn-add-new" class="btn-action" title="Dodaj nowe pytanie">
+                    ➕ Nowe pytanie
+                </button>
+                <button id="btn-download-json" class="btn-secondary" title="Pobierz zaktualizowany plik milionerzy.json">
+                    📥 Pobierz JSON
+                </button>
+                <button id="btn-save-disk" class="btn-secondary hidden" title="Zapisz bezpośrednio na dysku (wymaga serwera node server.js)">
+                    ⚡ Zapisz na dysku
+                </button>
+                <button id="btn-revert-defaults" class="btn-outline" title="Przywróć domyślne pytania z pliku">
+                    🔄 Przywróć domyślne
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Editor Workspace (Two-Pane) -->
+        <main class="editor-workspace">
+            <!-- Left Pane: Questions List & Filters -->
+            <aside class="editor-sidebar">
+                <div class="filter-card">
+                    <input type="text" id="filter-search" class="input-search" placeholder="🔍 Szukaj w pytaniach, ID, odpowiedziach..." />
+                    
+                    <div class="filter-row">
+                        <select id="filter-level" class="select-level">
+                            <option value="all">Wszystkie poziomy (1-12)</option>
+                            <option value="1">Poziom 1 (1 pkt)</option>
+                            <option value="2">Poziom 2 (1 pkt 🔒)</option>
+                            <option value="3">Poziom 3 (2 pkt)</option>
+                            <option value="4">Poziom 4 (2 pkt)</option>
+                            <option value="5">Poziom 5 (3 pkt)</option>
+                            <option value="6">Poziom 6 (3 pkt)</option>
+                            <option value="7">Poziom 7 (4 pkt 🔒)</option>
+                            <option value="8">Poziom 8 (5 pkt)</option>
+                            <option value="9">Poziom 9 (6 pkt)</option>
+                            <option value="10">Poziom 10 (7 pkt)</option>
+                            <option value="11">Poziom 11 (8 pkt)</option>
+                            <option value="12">Poziom 12 (10 pkt 👑)</option>
+                        </select>
+
+                        <label class="checkbox-label" title="Pokaż tylko pytania posiadające ilustrację">
+                            <input type="checkbox" id="filter-has-image" />
+                            <span>🖼️ Tylko z obrazkiem</span>
+                        </label>
+                    </div>
+
+                    <div class="filter-count-status">
+                        Wyświetlono: <strong id="filter-visible-count">0</strong> z <span id="filter-all-count">0</span>
+                    </div>
+                </div>
+
+                <!-- Questions List -->
+                <div class="questions-scroll-list" id="questions-list">
+                    <!-- Populated dynamically -->
+                </div>
+            </aside>
+
+            <!-- Right Pane: Question Inspector & Edit Form -->
+            <section class="editor-main-form">
+                <!-- Navigation Toolbar (Next / Previous Arrows) -->
+                <div class="editor-nav-bar">
+                    <button id="btn-nav-prev" class="btn-nav" title="Poprzednie pytanie (Strzałka w lewo)">
+                        ⬅ Poprzednie
+                    </button>
+                    <div class="nav-indicator">
+                        <span id="nav-current-pos">Pytanie 1 z 230</span>
+                        <span class="nav-id-badge" id="nav-id-badge">ID: #1</span>
+                    </div>
+                    <button id="btn-nav-next" class="btn-nav" title="Następne pytanie (Strzałka w prawo)">
+                        Następne ➡
+                    </button>
+                </div>
+
+                <!-- The Edit Form Card -->
+                <form id="question-edit-form" class="edit-form-card" onsubmit="return false;">
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="edit-level">Poziom pytania (1 - 12):</label>
+                            <select id="edit-level" class="form-control">
+                                <option value="1">Poziom 1 (1 pkt)</option>
+                                <option value="2">Poziom 2 (1 pkt - Gwarantowany 🔒)</option>
+                                <option value="3">Poziom 3 (2 pkt)</option>
+                                <option value="4">Poziom 4 (2 pkt)</option>
+                                <option value="5">Poziom 5 (3 pkt)</option>
+                                <option value="6">Poziom 6 (3 pkt)</option>
+                                <option value="7">Poziom 7 (4 pkt - Gwarantowany 🔒)</option>
+                                <option value="8">Poziom 8 (5 pkt)</option>
+                                <option value="9">Poziom 9 (6 pkt)</option>
+                                <option value="10">Poziom 10 (7 pkt)</option>
+                                <option value="11">Poziom 11 (8 pkt)</option>
+                                <option value="12">Poziom 12 (10 pkt - Główna wygrana 👑)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-category">Kategoria pytania:</label>
+                            <input type="text" id="edit-category" class="form-control" placeholder="np. Bramki, ESP32, RP2040, ALU" required />
+                        </div>
+                    </div>
+
+                    <!-- Question Text -->
+                    <div class="form-group">
+                        <label for="edit-question-text">Treść pytania:</label>
+                        <textarea id="edit-question-text" class="form-control textarea-question" rows="3" placeholder="Wpisz treść pytania..." required></textarea>
+                    </div>
+
+                    <!-- Image Section -->
+                    <div class="form-group image-edit-group">
+                        <label for="edit-image-url">Adres URL obrazka (opcjonalny):</label>
+                        <div class="image-input-row">
+                            <input type="url" id="edit-image-url" class="form-control" placeholder="https://... (PNG, JPG, SVG)" />
+                            <button type="button" id="btn-clear-image" class="btn-outline btn-sm">Usuń obrazek</button>
+                        </div>
+                        
+                        <div class="form-group" style="margin-top: 8px;">
+                            <label for="edit-image-source">Źródło obrazka (opcjonalne):</label>
+                            <input type="text" id="edit-image-source" class="form-control" placeholder="np. Wikimedia Commons / link do źródła" />
+                        </div>
+
+                        <!-- Image Preview -->
+                        <div id="edit-image-preview-box" class="image-preview-container hidden">
+                            <span class="preview-label">Podgląd grafiki:</span>
+                            <div class="preview-frame">
+                                <img id="edit-image-preview" src="" alt="Podgląd obrazka" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4 Answers & Correct Indicator -->
+                    <div class="answers-edit-section">
+                        <label class="section-label">Warianty odpowiedzi (zaznacz kółkiem poprawną odpowiedź):</label>
+                        
+                        <div class="answer-edit-row" data-key="A">
+                            <label class="radio-container" title="Zaznacz A jako poprawną odpowiedź">
+                                <input type="radio" name="correct_answer" value="A" id="correct-A" required />
+                                <span class="radio-custom"></span>
+                                <span class="letter-label">A:</span>
+                            </label>
+                            <input type="text" id="edit-answer-A" class="form-control answer-input" placeholder="Treść odpowiedzi A" required />
+                        </div>
+
+                        <div class="answer-edit-row" data-key="B">
+                            <label class="radio-container" title="Zaznacz B jako poprawną odpowiedź">
+                                <input type="radio" name="correct_answer" value="B" id="correct-B" />
+                                <span class="radio-custom"></span>
+                                <span class="letter-label">B:</span>
+                            </label>
+                            <input type="text" id="edit-answer-B" class="form-control answer-input" placeholder="Treść odpowiedzi B" required />
+                        </div>
+
+                        <div class="answer-edit-row" data-key="C">
+                            <label class="radio-container" title="Zaznacz C jako poprawną odpowiedź">
+                                <input type="radio" name="correct_answer" value="C" id="correct-C" />
+                                <span class="radio-custom"></span>
+                                <span class="letter-label">C:</span>
+                            </label>
+                            <input type="text" id="edit-answer-C" class="form-control answer-input" placeholder="Treść odpowiedzi C" required />
+                        </div>
+
+                        <div class="answer-edit-row" data-key="D">
+                            <label class="radio-container" title="Zaznacz D jako poprawną odpowiedź">
+                                <input type="radio" name="correct_answer" value="D" id="correct-D" />
+                                <span class="radio-custom"></span>
+                                <span class="letter-label">D:</span>
+                            </label>
+                            <input type="text" id="edit-answer-D" class="form-control answer-input" placeholder="Treść odpowiedzi D" required />
+                        </div>
+                    </div>
+
+                    <!-- Explanation -->
+                    <div class="form-group">
+                        <label for="edit-explanation">Wyjaśnienie merytoryczne (wyświetlane po odpowiedzi):</label>
+                        <textarea id="edit-explanation" class="form-control" rows="2" placeholder="Dlaczego ta odpowiedź jest poprawna..."></textarea>
+                    </div>
+
+                    <!-- Form Action Buttons -->
+                    <div class="form-actions-bar">
+                        <div class="form-actions-left">
+                            <button type="button" id="btn-save-question" class="btn-confirm-save">
+                                💾 Zapisz zmiany <kbd>Ctrl+S</kbd>
+                            </button>
+                            <button type="button" id="btn-duplicate-question" class="btn-secondary">
+                                📋 Duplikuj
+                            </button>
+                        </div>
+                        <div class="form-actions-right">
+                            <button type="button" id="btn-delete-question" class="btn-danger">
+                                🗑️ Usuń to pytanie
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="milionerzy_data.js"></script>
+    <script src="editor.js"></script>
+</body>
+</html>

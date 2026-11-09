@@ -62,8 +62,11 @@
                 </div>
             </div>
 
-            <!-- Utilities (Sound, Walk Away, Restart, Reset Pool) -->
+            <!-- Utilities (Sound, Walk Away, Restart, Reset Pool, Editor) -->
             <div class="header-actions">
+                <a href="editor.html" class="btn-secondary btn-editor-link" title="Baza pytań: przeglądaj, edytuj i usuwaj pytania">
+                    ✏️ Baza pytań
+                </a>
                 <button id="btn-sound" class="btn-icon" title="Włącz / wyłącz dźwięk">
                     <span id="sound-icon">🔊</span>
                 </button>
@@ -107,6 +110,14 @@
                         </div>
                     </div>
                     <div class="connector-line connector-right"></div>
+                </div>
+
+                <!-- Question Image Frame (shown if current question has an image) -->
+                <div id="question-image-box" class="question-image-box hidden">
+                    <div class="question-image-frame" id="question-image-frame">
+                        <img id="question-image" class="question-image" src="" alt="Ilustracja do pytania" />
+                    </div>
+                    <div class="image-zoom-hint">🔍 Kliknij, aby powiększyć</div>
                 </div>
 
                 <!-- Answer Reveal Controls & Instruction -->
@@ -245,6 +256,18 @@
             <div class="modal-actions">
                 <button id="modal-btn-restart" class="btn-action">Zagraj ponownie</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-lightbox" class="image-lightbox hidden">
+        <div class="lightbox-overlay" id="lightbox-overlay"></div>
+        <div class="lightbox-dialog">
+            <button id="lightbox-close" class="lightbox-close" title="Zamknij (Esc)">&times;</button>
+            <div class="lightbox-img-wrapper">
+                <img id="lightbox-img" class="lightbox-img" src="" alt="Powiększony schemat" />
+            </div>
+            <div id="lightbox-caption" class="lightbox-caption"></div>
         </div>
     </div>
 
