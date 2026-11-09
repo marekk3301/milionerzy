@@ -1,6 +1,6 @@
 window.MILIONERZY_DATA = {
   "tytul": "Milionerzy: technika cyfrowa, elektronika i systemy wbudowane",
-  "liczba_pytan": 200,
+  "liczba_pytan": 230,
   "drabinka_nagrod": {
     "1": 500,
     "2": 1000,
@@ -3015,6 +3015,516 @@ window.MILIONERZY_DATA = {
       },
       "poprawna": "C",
       "wyjasnienie": "Specyfikacja podaje do 133 MHz (domyślnie Pico SDK ustawia 125 MHz)."
+    },
+    {
+      "id": 201,
+      "poziom": 1,
+      "nagroda": 500,
+      "kategoria": "Bramki (obrazek)",
+      "pytanie": "Jaką bramkę logiczną przedstawia symbol na obrazku?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:AND_ANSI.svg",
+      "odpowiedzi": {
+        "A": "AND",
+        "B": "OR",
+        "C": "NOT",
+        "D": "XOR"
+      },
+      "poprawna": "A",
+      "wyjasnienie": "Symbol z płaską tylną krawędzią i zaokrąglonym przodem to bramka AND (iloczyn logiczny)."
+    },
+    {
+      "id": 202,
+      "poziom": 1,
+      "nagroda": 500,
+      "kategoria": "Płytki (obrazek)",
+      "pytanie": "Jaka popularna płytka rozwojowa jest widoczna na zdjęciu?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/3/38/Arduino_Uno_-_R3.jpg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Arduino_Uno_-_R3.jpg",
+      "odpowiedzi": {
+        "A": "Raspberry Pi Pico",
+        "B": "ESP32 DevKit",
+        "C": "Raspberry Pi 4",
+        "D": "Arduino Uno"
+      },
+      "poprawna": "D",
+      "wyjasnienie": "To Arduino Uno R3 z mikrokontrolerem ATmega328P."
+    },
+    {
+      "id": 203,
+      "poziom": 1,
+      "nagroda": 500,
+      "kategoria": "Elektronika (obrazek)",
+      "pytanie": "Do czego służy element widoczny na zdjęciu?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/7/73/400_points_breadboard.jpg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:400_points_breadboard.jpg",
+      "odpowiedzi": {
+        "A": "Do lutowania układów",
+        "B": "Do łączenia elementów elektronicznych bez lutowania",
+        "C": "Do pomiaru napięcia",
+        "D": "Do zasilania mikrokontrolera"
+      },
+      "poprawna": "B",
+      "wyjasnienie": "To płytka stykowa (breadboard), idealna do prototypowania bez lutowania."
+    },
+    {
+      "id": 204,
+      "poziom": 2,
+      "nagroda": 1000,
+      "kategoria": "Bramki (obrazek)",
+      "pytanie": "Jaką bramkę logiczną przedstawia symbol na obrazku?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:OR_ANSI.svg",
+      "odpowiedzi": {
+        "A": "AND",
+        "B": "NAND",
+        "C": "OR",
+        "D": "NOR"
+      },
+      "poprawna": "C",
+      "wyjasnienie": "Symbol z wklęsłą tylną krawędzią i ostrym przodem to bramka OR (suma logiczna)."
+    },
+    {
+      "id": 205,
+      "poziom": 2,
+      "nagroda": 1000,
+      "kategoria": "RP2040 (obrazek)",
+      "pytanie": "Jaka płytka z mikrokontrolerem RP2040 jest widoczna na zdjęciu?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/3/38/Raspberry_Pi_Pico_top.jpg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_Pico_top.jpg",
+      "odpowiedzi": {
+        "A": "Arduino Nano",
+        "B": "Raspberry Pi Pico",
+        "C": "ESP32 DevKit",
+        "D": "Teensy 4.1"
+      },
+      "poprawna": "B",
+      "wyjasnienie": "To Raspberry Pi Pico z układem RP2040."
+    },
+    {
+      "id": 206,
+      "poziom": 2,
+      "nagroda": 1000,
+      "kategoria": "ESP32 (obrazek)",
+      "pytanie": "Na jakim mikrokontrolerze oparta jest płytka widoczna na zdjęciu?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/c/c2/ESP32_Dev_Board.jpg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:ESP32_Dev_Board.jpg",
+      "odpowiedzi": {
+        "A": "ATmega328P",
+        "B": "RP2040",
+        "C": "STM8",
+        "D": "ESP32"
+      },
+      "poprawna": "D",
+      "wyjasnienie": "To płytka rozwojowa ESP32 z Wi-Fi i Bluetooth."
+    },
+    {
+      "id": 207,
+      "poziom": 3,
+      "nagroda": 2000,
+      "kategoria": "Bramki (obrazek)",
+      "pytanie": "Jaki stan ma wyjście bramki z obrazka, gdy oba wejścia są w stanie 1?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:NAND_ANSI.svg",
+      "odpowiedzi": {
+        "A": "0",
+        "B": "1",
+        "C": "Stan wysokiej impedancji",
+        "D": "Zależy od zegara"
+      },
+      "poprawna": "A",
+      "wyjasnienie": "To bramka NAND: 1 AND 1 = 1, a po negacji wyjście wynosi 0."
+    },
+    {
+      "id": 208,
+      "poziom": 3,
+      "nagroda": 2000,
+      "kategoria": "Bramki (obrazek)",
+      "pytanie": "Jaki stan ma wyjście bramki z obrazka dla wejść A = 1 i B = 0?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/0/01/XOR_ANSI.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:XOR_ANSI.svg",
+      "odpowiedzi": {
+        "A": "0",
+        "B": "Stan wysokiej impedancji",
+        "C": "1",
+        "D": "Nieokreślony"
+      },
+      "poprawna": "C",
+      "wyjasnienie": "XOR daje 1, gdy wejścia są różne."
+    },
+    {
+      "id": 209,
+      "poziom": 3,
+      "nagroda": 2000,
+      "kategoria": "Elektronika (obrazek)",
+      "pytanie": "Ile wyprowadzeń ma typowa dioda LED RGB widoczna na zdjęciu (trzy kolory i wspólna elektroda)?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/a/ad/RGB_light-emitting_diode.jpg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:RGB_light-emitting_diode.jpg",
+      "odpowiedzi": {
+        "A": "4",
+        "B": "2",
+        "C": "3",
+        "D": "6"
+      },
+      "poprawna": "A",
+      "wyjasnienie": "Trzy wyprowadzenia kolorów (R, G, B) plus jedna wspólna elektroda, anoda lub katoda."
+    },
+    {
+      "id": 210,
+      "poziom": 4,
+      "nagroda": 5000,
+      "kategoria": "Sumatory (obrazek)",
+      "pytanie": "Jaki układ cyfrowy przedstawia schemat?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Half_Adder.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Half_Adder.svg",
+      "odpowiedzi": {
+        "A": "Pełny sumator (full adder)",
+        "B": "Multiplekser",
+        "C": "Dekoder",
+        "D": "Półsumator (half adder)"
+      },
+      "poprawna": "D",
+      "wyjasnienie": "Półsumator dodaje dwa bity i daje sumę oraz przeniesienie."
+    },
+    {
+      "id": 211,
+      "poziom": 4,
+      "nagroda": 5000,
+      "kategoria": "Bramki (obrazek)",
+      "pytanie": "Jaki stan ma wyjście bramki z obrazka dla wejść 0 i 0?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/6/6c/NOR_ANSI.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:NOR_ANSI.svg",
+      "odpowiedzi": {
+        "A": "0",
+        "B": "1",
+        "C": "Stan wysokiej impedancji",
+        "D": "Nieokreślony"
+      },
+      "poprawna": "B",
+      "wyjasnienie": "To bramka NOR: 0 OR 0 = 0, a po negacji wyjście wynosi 1."
+    },
+    {
+      "id": 212,
+      "poziom": 4,
+      "nagroda": 5000,
+      "kategoria": "Elektronika (obrazek)",
+      "pytanie": "Ile segmentów (nie licząc kropki dziesiętnej) ma wyświetlacz widoczny na zdjęciu?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/e/ec/LED_seven_segment_display_on_a_digital_clock_(16041065485).jpg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:LED_seven_segment_display_on_a_digital_clock_(16041065485).jpg",
+      "odpowiedzi": {
+        "A": "5",
+        "B": "8",
+        "C": "7",
+        "D": "14"
+      },
+      "poprawna": "C",
+      "wyjasnienie": "To wyświetlacz siedmiosegmentowy, stąd jego nazwa."
+    },
+    {
+      "id": 213,
+      "poziom": 5,
+      "nagroda": 10000,
+      "kategoria": "Sumatory (obrazek)",
+      "pytanie": "Ile wejść ma układ przedstawiony na schemacie?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Full-adder.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Full-adder.svg",
+      "odpowiedzi": {
+        "A": "2",
+        "B": "3 (A, B i przeniesienie wejściowe)",
+        "C": "4",
+        "D": "1"
+      },
+      "poprawna": "B",
+      "wyjasnienie": "Pełny sumator dodaje dwa bity oraz przeniesienie z poprzedniego stopnia."
+    },
+    {
+      "id": 214,
+      "poziom": 5,
+      "nagroda": 10000,
+      "kategoria": "Bramki (obrazek)",
+      "pytanie": "Jaką bramkę przedstawia symbol i kiedy daje ona na wyjściu 1?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/d/d6/XNOR_ANSI.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:XNOR_ANSI.svg",
+      "odpowiedzi": {
+        "A": "XOR, gdy wejścia są różne",
+        "B": "NOR, gdy oba wejścia są równe 0",
+        "C": "NAND, gdy co najmniej jedno wejście jest równe 0",
+        "D": "XNOR, gdy oba wejścia mają taki sam stan"
+      },
+      "poprawna": "D",
+      "wyjasnienie": "XNOR to zanegowany XOR, więc daje 1 przy jednakowych wejściach."
+    },
+    {
+      "id": 215,
+      "poziom": 5,
+      "nagroda": 10000,
+      "kategoria": "Układy kombinacyjne (obrazek)",
+      "pytanie": "Jaki układ jest przedstawiony na schemacie?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/4/46/4-to-1_multiplexer.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:4-to-1_multiplexer.svg",
+      "odpowiedzi": {
+        "A": "Multiplekser 4:1",
+        "B": "Dekoder 2 na 4",
+        "C": "Demultiplekser 1:4",
+        "D": "Sumator"
+      },
+      "poprawna": "A",
+      "wyjasnienie": "Multiplekser 4:1 wybiera jedno z czterech wejść danych za pomocą dwóch wejść adresowych."
+    },
+    {
+      "id": 216,
+      "poziom": 6,
+      "nagroda": 20000,
+      "kategoria": "Przerzutniki (obrazek)",
+      "pytanie": "Jaki element przedstawia symbol i co robi przy aktywnym zboczu zegara?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/8/8c/D-Type_Flip-flop.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:D-Type_Flip-flop.svg",
+      "odpowiedzi": {
+        "A": "Przerzutnik T, który zmienia stan na przeciwny",
+        "B": "Bramka NAND, która neguje iloczyn",
+        "C": "Przerzutnik D, który przepisuje stan wejścia D na wyjście Q",
+        "D": "Rejestr przesuwający, który przesuwa bity"
+      },
+      "poprawna": "C",
+      "wyjasnienie": "Przerzutnik D zapamiętuje wartość wejścia D w chwili zbocza zegara."
+    },
+    {
+      "id": 217,
+      "poziom": 6,
+      "nagroda": 20000,
+      "kategoria": "Przerzutniki (obrazek)",
+      "pytanie": "Jaki układ tworzą dwie skrośnie sprzężone bramki NOR widoczne na schemacie?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/5/53/RS_Flip-flop_(NOR).svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:RS_Flip-flop_(NOR).svg",
+      "odpowiedzi": {
+        "A": "Przerzutnik (zatrzask) SR",
+        "B": "Półsumator",
+        "C": "Multiplekser",
+        "D": "Generator zegara"
+      },
+      "poprawna": "A",
+      "wyjasnienie": "Dwie skrośnie sprzężone bramki NOR tworzą najprostszy zatrzask SR."
+    },
+    {
+      "id": 218,
+      "poziom": 6,
+      "nagroda": 20000,
+      "kategoria": "Elektronika (obrazek)",
+      "pytanie": "Ile wyprowadzeń ma element oznaczany takim symbolem?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/1/19/Potentiometer_symbol.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Potentiometer_symbol.svg",
+      "odpowiedzi": {
+        "A": "2",
+        "B": "4",
+        "C": "5",
+        "D": "3"
+      },
+      "poprawna": "D",
+      "wyjasnienie": "Potencjometr ma dwa końce ścieżki rezystancyjnej i wyprowadzenie suwaka."
+    },
+    {
+      "id": 219,
+      "poziom": 7,
+      "nagroda": 40000,
+      "kategoria": "Elektronika (obrazek)",
+      "pytanie": "Schemat przedstawia dzielnik napięcia z dwóch rezystorów R1 i R2, a napięcie wyjściowe jest pobierane z R2. Jakie napięcie wyjściowe otrzymamy przy R1 = R2?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Voltage_divider.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Voltage_divider.svg",
+      "odpowiedzi": {
+        "A": "Całe napięcie wejściowe",
+        "B": "Połowę napięcia wejściowego",
+        "C": "Zero",
+        "D": "Dwukrotność napięcia wejściowego"
+      },
+      "poprawna": "B",
+      "wyjasnienie": "U_wy = U_we · R2 / (R1 + R2) = U_we / 2."
+    },
+    {
+      "id": 220,
+      "poziom": 7,
+      "nagroda": 40000,
+      "kategoria": "Protokoły (obrazek)",
+      "pytanie": "Do czego na schemacie magistrali I2C służą rezystory podłączone między liniami SDA i SCL a zasilaniem?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/3/3e/I2C.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:I2C.svg",
+      "odpowiedzi": {
+        "A": "Do ograniczania prądu diod LED",
+        "B": "Do zasilania urządzeń podrzędnych",
+        "C": "Jako rezystory podciągające (pull-up) dla linii typu open-drain",
+        "D": "Do zwiększania prędkości zegara"
+      },
+      "poprawna": "C",
+      "wyjasnienie": "Urządzenia na I2C tylko zwierają linię do masy, a stan wysoki zapewniają pull-upy."
+    },
+    {
+      "id": 221,
+      "poziom": 8,
+      "nagroda": 75000,
+      "kategoria": "Protokoły (obrazek)",
+      "pytanie": "Ile linii sygnałowych (bez GND) ma magistrala SPI z trzema urządzeniami podrzędnymi, jeśli współdzielone są MOSI, MISO i SCK, a każde urządzenie ma osobną linię wyboru SS?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/f/fc/SPI_three_slaves.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:SPI_three_slaves.svg",
+      "odpowiedzi": {
+        "A": "4",
+        "B": "6",
+        "C": "5",
+        "D": "3"
+      },
+      "poprawna": "B",
+      "wyjasnienie": "3 linie wspólne (MOSI, MISO, SCK) + 3 osobne linie SS = 6."
+    },
+    {
+      "id": 222,
+      "poziom": 8,
+      "nagroda": 75000,
+      "kategoria": "PWM (obrazek)",
+      "pytanie": "Jaki parametr sygnału PWM zmienia się na przebiegach o różnej proporcji czasu stanu wysokiego do okresu?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Duty_Cycle_Examples.png",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Duty_Cycle_Examples.png",
+      "odpowiedzi": {
+        "A": "Częstotliwość nośna",
+        "B": "Amplituda",
+        "C": "Faza",
+        "D": "Współczynnik wypełnienia (duty cycle)"
+      },
+      "poprawna": "D",
+      "wyjasnienie": "Wypełnienie to stosunek czasu stanu wysokiego do okresu sygnału."
+    },
+    {
+      "id": 223,
+      "poziom": 9,
+      "nagroda": 125000,
+      "kategoria": "Elektronika (obrazek)",
+      "pytanie": "Jakiego typu tranzystor przedstawia symbol?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/6/66/BJT_NPN_symbol.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:BJT_NPN_symbol.svg",
+      "odpowiedzi": {
+        "A": "Bipolarny NPN",
+        "B": "Bipolarny PNP",
+        "C": "MOSFET z kanałem N",
+        "D": "Dioda Zenera"
+      },
+      "poprawna": "A",
+      "wyjasnienie": "To tranzystor bipolarny NPN, w którym strzałka przy emiterze wskazuje kierunek od bazy."
+    },
+    {
+      "id": 224,
+      "poziom": 9,
+      "nagroda": 125000,
+      "kategoria": "Elektronika (obrazek)",
+      "pytanie": "Jaki element przedstawia symbol?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Zener_diode_symbol.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Zener_diode_symbol.svg",
+      "odpowiedzi": {
+        "A": "Dioda LED",
+        "B": "Dioda Schottky'ego",
+        "C": "Dioda Zenera",
+        "D": "Kondensator"
+      },
+      "poprawna": "C",
+      "wyjasnienie": "Zagięta kreska katody jest charakterystyczna dla diody Zenera."
+    },
+    {
+      "id": 225,
+      "poziom": 10,
+      "nagroda": 250000,
+      "kategoria": "Liczniki (obrazek)",
+      "pytanie": "Ile różnych stanów przyjmuje licznik Johnsona zbudowany z czterech przerzutników jak na schemacie?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/6/69/Johnson_Counter_4bit.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Johnson_Counter_4bit.svg",
+      "odpowiedzi": {
+        "A": "8",
+        "B": "4",
+        "C": "16",
+        "D": "15"
+      },
+      "poprawna": "A",
+      "wyjasnienie": "Licznik Johnsona z n przerzutników ma 2n stanów, czyli 8."
+    },
+    {
+      "id": 226,
+      "poziom": 10,
+      "nagroda": 250000,
+      "kategoria": "Bramki (obrazek)",
+      "pytanie": "Co dzieje się z wyjściem bufora trójstanowego, gdy jego wejście sterujące (enable) jest nieaktywne?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Tristate_buffer.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Tristate_buffer.svg",
+      "odpowiedzi": {
+        "A": "Przyjmuje stan 1",
+        "B": "Przyjmuje stan 0",
+        "C": "Kopiuje wejście z opóźnieniem",
+        "D": "Przechodzi w stan wysokiej impedancji (Hi-Z)"
+      },
+      "poprawna": "D",
+      "wyjasnienie": "W stanie Hi-Z wyjście jest odłączone od magistrali."
+    },
+    {
+      "id": 227,
+      "poziom": 11,
+      "nagroda": 500000,
+      "kategoria": "ALU (obrazek)",
+      "pytanie": "Co zwykle zwraca blok ALU (taki jak na symbolu) oprócz wyniku operacji?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/8/82/ALU_symbol.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:ALU_symbol.svg",
+      "odpowiedzi": {
+        "A": "Sygnał zegarowy",
+        "B": "Flagi stanu, np. zero, przeniesienie, przepełnienie",
+        "C": "Napięcie zasilania",
+        "D": "Adres następnej instrukcji"
+      },
+      "poprawna": "B",
+      "wyjasnienie": "ALU ustawia flagi, np. Z, C, N i V, które wykorzystuje m.in. logika skoków warunkowych."
+    },
+    {
+      "id": 228,
+      "poziom": 11,
+      "nagroda": 500000,
+      "kategoria": "PWM (obrazek)",
+      "pytanie": "Sygnał sterujący serwem modelarskim ma okres 20 ms. Jaka szerokość impulsu ustawia serwo zwykle w pozycji środkowej?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Servomotor_Timing_Diagram.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Servomotor_Timing_Diagram.svg",
+      "odpowiedzi": {
+        "A": "ok. 0,5 ms",
+        "B": "ok. 5 ms",
+        "C": "ok. 1,5 ms",
+        "D": "ok. 10 ms"
+      },
+      "poprawna": "C",
+      "wyjasnienie": "Typowo 1 ms to jedno skrajne położenie, 1,5 ms środek, a 2 ms drugie skrajne."
+    },
+    {
+      "id": 229,
+      "poziom": 12,
+      "nagroda": 1000000,
+      "kategoria": "Rejestry (obrazek)",
+      "pytanie": "Po ilu taktach zegara bit podany na wejście szeregowe czterobitowego rejestru przesuwającego z przerzutników D trafi na wyjście ostatniego przerzutnika?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/c/c1/4_Bit_Shift_Register.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:4_Bit_Shift_Register.svg",
+      "odpowiedzi": {
+        "A": "Po 1 takcie",
+        "B": "Po 4 taktach",
+        "C": "Po 3 taktach",
+        "D": "Po 8 taktach"
+      },
+      "poprawna": "B",
+      "wyjasnienie": "Każde zbocze zegara przesuwa bit o jeden stopień, więc dopiero czwarte zbocze zapisze go w ostatnim przerzutniku."
+    },
+    {
+      "id": 230,
+      "poziom": 12,
+      "nagroda": 1000000,
+      "kategoria": "Mapy Karnaugha (obrazek)",
+      "pytanie": "Mapa Karnaugha 4 zmiennych dla funkcji parzystości (XOR/XNOR) ma jedynki rozmieszczone jak szachownica. Co to oznacza dla minimalizacji?",
+      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Karnaugh_map_KV_4x4_XNOR_EXOR.svg",
+      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Karnaugh_map_KV_4x4_XNOR_EXOR.svg",
+      "odpowiedzi": {
+        "A": "Funkcję można sprowadzić do jednej zmiennej",
+        "B": "Wystarczą dwie grupy po osiem jedynek",
+        "C": "Funkcja jest zawsze równa zeru",
+        "D": "Żadne dwie jedynki nie sąsiadują, więc nie da się utworzyć większych grup"
+      },
+      "poprawna": "D",
+      "wyjasnienie": "Brak sąsiadujących jedynek uniemożliwia sklejanie, więc minimalna postać zawiera wszystkie 8 mintermów."
     }
   ]
 };

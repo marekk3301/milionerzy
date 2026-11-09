@@ -172,7 +172,7 @@
             dom.usedQuestionsCount.textContent = state.usedQuestionIds.size;
         }
         if (dom.totalQuestionsCount) {
-            dom.totalQuestionsCount.textContent = state.allQuestions.length || 200;
+            dom.totalQuestionsCount.textContent = state.allQuestions.length || 230;
         }
     }
 
@@ -181,7 +181,7 @@
      */
     function resetSessionQuestions() {
         const count = state.usedQuestionIds.size;
-        const total = state.allQuestions.length || 200;
+        const total = state.allQuestions.length || 230;
 
         if (!confirm(`Czy na pewno chcesz zresetować pulę pytań?\nWykorzystano już: ${count} z ${total} pytań.\nWszystkie pytania zostaną odkreślone i znów będą mogły być wylosowane.`)) {
             return;
