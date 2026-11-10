@@ -1,6 +1,6 @@
 window.MILIONERZY_DATA = {
   "tytul": "Milionerzy: technika cyfrowa, elektronika i systemy wbudowane",
-  "liczba_pytan": 230,
+  "liczba_pytan": 152,
   "drabinka_nagrod": {
     "1": 500,
     "2": 1000,
@@ -16,6 +16,22 @@ window.MILIONERZY_DATA = {
     "12": 1000000
   },
   "pytania": [
+    {
+      "id": 231,
+      "poziom": 10,
+      "nagroda": 500,
+      "kategoria": "Układy",
+      "pytanie": "Schemat jakiego układu znajduje się na obrazku?",
+      "odpowiedzi": {
+        "A": "Rejestr 8-bitowy",
+        "B": "Rejestr 16-bitowy",
+        "C": "Sumator 8-bitowy",
+        "D": "Multiplexer"
+      },
+      "poprawna": "C",
+      "wyjasnienie": "Dwa bity na wejściu każdego z ośmiu full-adderów i suma na wyjściu wskazują na sumator 8-bitowy.",
+      "obrazek": "https://www.wolfram.com/system-modeler/examples/education/electrical-engineering/8-bit-adder/assets.en/img/output1.png"
+    },
     {
       "id": 1,
       "poziom": 1,
@@ -276,7 +292,7 @@ window.MILIONERZY_DATA = {
       "poziom": 2,
       "nagroda": 1000,
       "kategoria": "Logika Boole'a",
-      "pytanie": "Ile wynosi A + A' (A lub nie-A)?",
+      "pytanie": "Ile wynosi A + A'?",
       "odpowiedzi": {
         "A": "0",
         "B": "A",
@@ -333,7 +349,7 @@ window.MILIONERZY_DATA = {
     },
     {
       "id": 22,
-      "poziom": 3,
+      "poziom": 8,
       "nagroda": 2000,
       "kategoria": "Sumatory",
       "pytanie": "Którą bramką realizuje się wyjście sumy S w półsumatorze (half adder)?",
@@ -344,11 +360,12 @@ window.MILIONERZY_DATA = {
         "D": "NOR"
       },
       "poprawna": "C",
-      "wyjasnienie": "S = A XOR B."
+      "wyjasnienie": "S = A XOR B.",
+      "obrazek": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1007%2Fs11082-024-06731-x/MediaObjects/11082_2024_6731_Fig1_HTML.png"
     },
     {
       "id": 23,
-      "poziom": 3,
+      "poziom": 8,
       "nagroda": 2000,
       "kategoria": "Sumatory",
       "pytanie": "Którą bramką realizuje się wyjście przeniesienia (carry) w półsumatorze?",
@@ -359,7 +376,8 @@ window.MILIONERZY_DATA = {
         "D": "NOT"
       },
       "poprawna": "A",
-      "wyjasnienie": "C = A AND B."
+      "wyjasnienie": "C = A AND B.",
+      "obrazek": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1007%2Fs11082-024-06731-x/MediaObjects/11082_2024_6731_Fig1_HTML.png"
     },
     {
       "id": 24,
@@ -467,21 +485,6 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "Negacja 0010 + 1 = 0011 = 3, więc liczba to -3."
     },
     {
-      "id": 31,
-      "poziom": 4,
-      "nagroda": 5000,
-      "kategoria": "Układy kombinacyjne",
-      "pytanie": "Ile wejść adresowych (sterujących) ma multiplekser 4:1?",
-      "odpowiedzi": {
-        "A": "1",
-        "B": "2",
-        "C": "3",
-        "D": "4"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "log2(4) = 2."
-    },
-    {
       "id": 32,
       "poziom": 4,
       "nagroda": 5000,
@@ -570,36 +573,6 @@ window.MILIONERZY_DATA = {
       },
       "poprawna": "A",
       "wyjasnienie": "Wejścia: A, B oraz przeniesienie wejściowe Cin."
-    },
-    {
-      "id": 38,
-      "poziom": 5,
-      "nagroda": 10000,
-      "kategoria": "Sumatory",
-      "pytanie": "Jaki jest wzór na sumę S w pełnym sumatorze?",
-      "odpowiedzi": {
-        "A": "S = A AND B AND Cin",
-        "B": "S = A OR B OR Cin",
-        "C": "S = A XOR B XOR Cin",
-        "D": "S = A NAND B NAND Cin"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "Suma to parzystość trzech bitów wejściowych."
-    },
-    {
-      "id": 39,
-      "poziom": 5,
-      "nagroda": 10000,
-      "kategoria": "Sumatory",
-      "pytanie": "Z czego można zbudować pełny sumator?",
-      "odpowiedzi": {
-        "A": "Z dwóch półsumatorów i bramki AND",
-        "B": "Z dwóch półsumatorów i bramki OR",
-        "C": "Z trzech półsumatorów",
-        "D": "Z jednego półsumatora i bramki XOR"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "Cout = C1 OR C2, gdzie C1 i C2 to przeniesienia z obu półsumatorów."
     },
     {
       "id": 40,
@@ -722,56 +695,11 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "Przerzutnik T przy T=1 przełącza wyjście, przy T=0 trzyma stan."
     },
     {
-      "id": 48,
-      "poziom": 6,
-      "nagroda": 20000,
-      "kategoria": "Liczniki",
-      "pytanie": "Czym różni się licznik asynchroniczny od synchronicznego?",
-      "odpowiedzi": {
-        "A": "Używa wyłącznie bramek",
-        "B": "Nie zawiera przerzutników",
-        "C": "Liczy tylko w dół",
-        "D": "Przerzutniki nie mają wspólnego zegara, wyjście jednego taktuje następny"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "W liczniku asynchronicznym zmiany propagują się kaskadowo, co ogranicza szybkość."
-    },
-    {
-      "id": 49,
-      "poziom": 6,
-      "nagroda": 20000,
-      "kategoria": "Liczniki",
-      "pytanie": "Do jakiej wartości liczy licznik dziesiętny BCD (modulo 10), zaczynając od 0?",
-      "odpowiedzi": {
-        "A": "10",
-        "B": "9",
-        "C": "8",
-        "D": "15"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "Stany 0-9, po 9 następuje powrót do 0."
-    },
-    {
-      "id": 50,
-      "poziom": 6,
-      "nagroda": 20000,
-      "kategoria": "Liczniki",
-      "pytanie": "Ile przerzutników potrzeba minimalnie do zbudowania licznika modulo 16?",
-      "odpowiedzi": {
-        "A": "16",
-        "B": "8",
-        "C": "2",
-        "D": "4"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "2^4 = 16."
-    },
-    {
       "id": 51,
       "poziom": 6,
       "nagroda": 20000,
       "kategoria": "Rejestry",
-      "pytanie": "Ile przerzutników ma rejestr przesuwający 8-bitowy?",
+      "pytanie": "Ile przerzutników ma rejestr przesuwny 8-bitowy?",
       "odpowiedzi": {
         "A": "8",
         "B": "4",
@@ -786,7 +714,7 @@ window.MILIONERZY_DATA = {
       "poziom": 6,
       "nagroda": 20000,
       "kategoria": "Rejestry",
-      "pytanie": "Co oznacza skrót SIPO w kontekście rejestrów przesuwających?",
+      "pytanie": "Co oznacza skrót SIPO w kontekście rejestrów przesuwnych?",
       "odpowiedzi": {
         "A": "Single Input Pulse Output",
         "B": "Sequential Input Pointer Operation",
@@ -876,7 +804,7 @@ window.MILIONERZY_DATA = {
       "poziom": 7,
       "nagroda": 40000,
       "kategoria": "Mapy Karnaugha",
-      "pytanie": "Czym są stany nieokreślone (don't care) na mapie Karnaugha?",
+      "pytanie": "Czym są stany nieokreślone na mapie Karnaugha?",
       "odpowiedzi": {
         "A": "Zawsze zerami",
         "B": "Zawsze jedynkami",
@@ -885,36 +813,6 @@ window.MILIONERZY_DATA = {
       },
       "poprawna": "D",
       "wyjasnienie": "Pozwalają uzyskać prostsze wyrażenie."
-    },
-    {
-      "id": 59,
-      "poziom": 7,
-      "nagroda": 40000,
-      "kategoria": "Sumatory",
-      "pytanie": "Jaka jest główna wada sumatora z przeniesieniem szeregowym (ripple carry)?",
-      "odpowiedzi": {
-        "A": "Opóźnienie rośnie z liczbą bitów z powodu propagacji przeniesienia",
-        "B": "Nie potrafi dodawać liczb ujemnych",
-        "C": "Wymaga zegara",
-        "D": "Działa tylko dla 1 bitu"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "Przeniesienie musi przejść przez wszystkie stopnie kolejno."
-    },
-    {
-      "id": 60,
-      "poziom": 7,
-      "nagroda": 40000,
-      "kategoria": "Sumatory",
-      "pytanie": "Na czym polega idea sumatora z przyspieszonym przeniesieniem (carry look-ahead)?",
-      "odpowiedzi": {
-        "A": "Liczy sumy sekwencyjnie",
-        "B": "Używa tylko jednego full addera wielokrotnie",
-        "C": "Oblicza przeniesienia równolegle z sygnałów generate i propagate",
-        "D": "Używa wyłącznie półsumatorów"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "G = A·B, P = A XOR B, a przeniesienia wylicza się bezpośrednio z G i P."
     },
     {
       "id": 61,
@@ -1007,81 +905,6 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "Latch jest przezroczysty przez cały czas aktywnego poziomu zegara."
     },
     {
-      "id": 67,
-      "poziom": 8,
-      "nagroda": 75000,
-      "kategoria": "Układy kombinacyjne",
-      "pytanie": "Czym jest hazard statyczny w układzie kombinacyjnym?",
-      "odpowiedzi": {
-        "A": "Chwilowym błędnym impulsem na wyjściu, które powinno pozostać stałe",
-        "B": "Trwałym uszkodzeniem bramki",
-        "C": "Zanikiem zasilania",
-        "D": "Zbyt wysoką częstotliwością zegara"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "Wynika z różnych opóźnień ścieżek sygnału (tzw. glitch)."
-    },
-    {
-      "id": 68,
-      "poziom": 8,
-      "nagroda": 75000,
-      "kategoria": "Automaty",
-      "pytanie": "Od czego zależą wyjścia w automacie Moore'a?",
-      "odpowiedzi": {
-        "A": "Tylko od wejść",
-        "B": "Od stanu i wejść",
-        "C": "Tylko od aktualnego stanu",
-        "D": "Tylko od zegara"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "W automacie Mealy'ego wyjścia zależą od stanu i wejść."
-    },
-    {
-      "id": 69,
-      "poziom": 8,
-      "nagroda": 75000,
-      "kategoria": "Automaty",
-      "pytanie": "Od czego zależą wyjścia w automacie Mealy'ego?",
-      "odpowiedzi": {
-        "A": "Od aktualnego stanu i aktualnych wejść",
-        "B": "Tylko od stanu",
-        "C": "Tylko od wejść",
-        "D": "Tylko od poprzedniego wyjścia"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "Dlatego automat Mealy'ego często wymaga mniej stanów niż Moore'a."
-    },
-    {
-      "id": 70,
-      "poziom": 8,
-      "nagroda": 75000,
-      "kategoria": "Automaty",
-      "pytanie": "Ile przerzutników minimalnie potrzeba do zakodowania automatu o 5 stanach?",
-      "odpowiedzi": {
-        "A": "2",
-        "B": "5",
-        "C": "3",
-        "D": "4"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "2^3 = 8 ≥ 5, a 2^2 = 4 < 5."
-    },
-    {
-      "id": 71,
-      "poziom": 8,
-      "nagroda": 75000,
-      "kategoria": "Bramki",
-      "pytanie": "Jaki jest trzeci stan wyjścia bramki trójstanowej (tri-state)?",
-      "odpowiedzi": {
-        "A": "Stan nieokreślony 2",
-        "B": "Wysoka impedancja (Hi-Z)",
-        "C": "Zwarcie do masy",
-        "D": "Zwarcie do zasilania"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "W stanie Hi-Z wyjście jest odłączone od magistrali."
-    },
-    {
       "id": 72,
       "poziom": 8,
       "nagroda": 75000,
@@ -1116,7 +939,7 @@ window.MILIONERZY_DATA = {
       "poziom": 9,
       "nagroda": 125000,
       "kategoria": "ALU",
-      "pytanie": "Co sygnalizuje flaga Z (zero) w ALU?",
+      "pytanie": "Co sygnalizuje flaga Z w ALU?",
       "odpowiedzi": {
         "A": "Przeniesienie z najstarszego bitu",
         "B": "Wynik ujemny",
@@ -1131,7 +954,7 @@ window.MILIONERZY_DATA = {
       "poziom": 9,
       "nagroda": 125000,
       "kategoria": "ALU",
-      "pytanie": "Co sygnalizuje flaga C (carry) w ALU?",
+      "pytanie": "Co sygnalizuje flaga C w ALU?",
       "odpowiedzi": {
         "A": "Przeniesienie z najstarszego bitu wyniku",
         "B": "Wynik równy zero",
@@ -1142,21 +965,6 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "Flaga C wskazuje na przeniesienie lub pożyczkę poza zakres słowa."
     },
     {
-      "id": 76,
-      "poziom": 9,
-      "nagroda": 125000,
-      "kategoria": "ALU",
-      "pytanie": "Jak można obliczyć flagę przepełnienia V (overflow) przy dodawaniu w U2?",
-      "odpowiedzi": {
-        "A": "V = C_out AND Z",
-        "B": "V = A OR B",
-        "C": "V = C_in do MSB XOR C_out z MSB",
-        "D": "V = A XOR B"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "Przepełnienie występuje, gdy przeniesienie do i z najstarszego bitu są różne."
-    },
-    {
       "id": 77,
       "poziom": 9,
       "nagroda": 125000,
@@ -1164,16 +972,16 @@ window.MILIONERZY_DATA = {
       "pytanie": "Jak ALU zwykle realizuje odejmowanie A - B w kodzie U2?",
       "odpowiedzi": {
         "A": "A + (~B) + 1",
-        "B": "A + B + 1",
+        "B": "A - B",
         "C": "~A + B",
-        "D": "A - ~B"
+        "D": "A + ~B"
       },
       "poprawna": "A",
       "wyjasnienie": "-B = ~B + 1, więc wystarczy sumator i inwerter z przeniesieniem wejściowym równym 1."
     },
     {
       "id": 78,
-      "poziom": 9,
+      "poziom": 10,
       "nagroda": 125000,
       "kategoria": "ALU",
       "pytanie": "Jak w jednobitowym bloku ALU zwykle wybiera się, której operacji wynik jest wystawiony na wyjście?",
@@ -1202,141 +1010,6 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "2^16 = 65536."
     },
     {
-      "id": 80,
-      "poziom": 10,
-      "nagroda": 250000,
-      "kategoria": "Bramki",
-      "pytanie": "Ile bramek NAND 2-wejściowych potrzeba minimalnie do zrealizowania funkcji XOR?",
-      "odpowiedzi": {
-        "A": "2",
-        "B": "3",
-        "C": "5",
-        "D": "4"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "Klasyczna realizacja: N1 = NAND(A,B), N2 = NAND(A,N1), N3 = NAND(B,N1), Y = NAND(N2,N3)."
-    },
-    {
-      "id": 81,
-      "poziom": 10,
-      "nagroda": 250000,
-      "kategoria": "Logika Boole'a",
-      "pytanie": "Jak wygląda wyrażenie dualne do A + B·C?",
-      "odpowiedzi": {
-        "A": "A·B + C",
-        "B": "A·(B + C)",
-        "C": "A' + B'·C'",
-        "D": "A + B + C"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "Dualność: zamiana AND z OR oraz 0 z 1, bez negowania zmiennych."
-    },
-    {
-      "id": 82,
-      "poziom": 10,
-      "nagroda": 250000,
-      "kategoria": "Logika Boole'a",
-      "pytanie": "Ile różnych funkcji logicznych można zdefiniować dla dwóch zmiennych wejściowych?",
-      "odpowiedzi": {
-        "A": "4",
-        "B": "8",
-        "C": "6",
-        "D": "16"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "2^(2^2) = 16."
-    },
-    {
-      "id": 83,
-      "poziom": 10,
-      "nagroda": 250000,
-      "kategoria": "Logika Boole'a",
-      "pytanie": "Ile różnych funkcji logicznych można zdefiniować dla trzech zmiennych wejściowych?",
-      "odpowiedzi": {
-        "A": "256",
-        "B": "64",
-        "C": "8",
-        "D": "128"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "2^(2^3) = 2^8 = 256."
-    },
-    {
-      "id": 84,
-      "poziom": 10,
-      "nagroda": 250000,
-      "kategoria": "Minimalizacja",
-      "pytanie": "Na czym polega metoda Quine'a-McCluskeya?",
-      "odpowiedzi": {
-        "A": "Na graficznym zakreślaniu grup na mapie",
-        "B": "Na konwersji kodu Graya",
-        "C": "Na tabelarycznej minimalizacji funkcji logicznych",
-        "D": "Na testowaniu hazardów"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "To algorytmiczny odpowiednik mapy Karnaugha, dobry dla większej liczby zmiennych."
-    },
-    {
-      "id": 85,
-      "poziom": 10,
-      "nagroda": 250000,
-      "kategoria": "Układy kombinacyjne",
-      "pytanie": "Dowolną funkcję ilu zmiennych można zrealizować pojedynczym multiplekserem 8:1, jeśli zmienne podamy na wejścia adresowe, a na wejścia danych stałe 0 lub 1?",
-      "odpowiedzi": {
-        "A": "3",
-        "B": "2",
-        "C": "8",
-        "D": "4"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "3 wejścia adresowe wybierają jeden z 8 wierszy tablicy prawdy, a wejścia danych zawierają wartości funkcji."
-    },
-    {
-      "id": 86,
-      "poziom": 10,
-      "nagroda": 250000,
-      "kategoria": "Minimalizacja",
-      "pytanie": "Czym jest implikant istotny (essential prime implicant)?",
-      "odpowiedzi": {
-        "A": "Każdym implikantem funkcji",
-        "B": "Implikantem pokrywającym same zera",
-        "C": "Implikantem prostym, który jako jedyny pokrywa pewien minterm",
-        "D": "Implikantem o najmniejszej liczbie zmiennych"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "Implikanty istotne muszą wejść do minimalnego pokrycia funkcji."
-    },
-    {
-      "id": 87,
-      "poziom": 11,
-      "nagroda": 500000,
-      "kategoria": "Przerzutniki",
-      "pytanie": "Jaki problem rozwiązuje konstrukcja master-slave w przerzutniku JK?",
-      "odpowiedzi": {
-        "A": "Zbyt duży pobór mocy",
-        "B": "Wielokrotne przełączanie w trakcie jednego impulsu zegara (race-around)",
-        "C": "Brak wejścia zegarowego",
-        "D": "Zbyt małą liczbę stanów"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "Przy J=K=1 i długim impulsie zegara przerzutnik poziomowy mógłby przełączać się wielokrotnie."
-    },
-    {
-      "id": 88,
-      "poziom": 11,
-      "nagroda": 500000,
-      "kategoria": "Zegary",
-      "pytanie": "Od czego zależy maksymalna częstotliwość zegara w układzie synchronicznym?",
-      "odpowiedzi": {
-        "A": "Tylko od napięcia zasilania",
-        "B": "Tylko od liczby przerzutników",
-        "C": "Tylko od długości przewodów",
-        "D": "Od t_clk-to-Q, opóźnienia logiki kombinacyjnej i czasu setup (f_max ≈ 1/(t_cq + t_logic + t_su))"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "Najdłuższa ścieżka kombinacyjna między przerzutnikami wyznacza minimalny okres zegara."
-    },
-    {
       "id": 89,
       "poziom": 11,
       "nagroda": 500000,
@@ -1352,53 +1025,8 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "Występuje np. przy asynchronicznych sygnałach wejściowych."
     },
     {
-      "id": 90,
-      "poziom": 11,
-      "nagroda": 500000,
-      "kategoria": "Zegary",
-      "pytanie": "Po co stosuje się synchronizator dwuprzerzutnikowy?",
-      "odpowiedzi": {
-        "A": "Aby podwoić częstotliwość zegara",
-        "B": "Aby dodać dwie liczby",
-        "C": "Aby zanegować sygnał",
-        "D": "Aby zmniejszyć ryzyko propagacji metastabilności przy przekraczaniu domen zegarowych"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "Drugi przerzutnik daje pierwszemu czas na ustabilizowanie stanu."
-    },
-    {
-      "id": 91,
-      "poziom": 11,
-      "nagroda": 500000,
-      "kategoria": "Liczniki",
-      "pytanie": "Ile różnych stanów ma licznik Johnsona zbudowany z n przerzutników?",
-      "odpowiedzi": {
-        "A": "2n",
-        "B": "n",
-        "C": "2^n",
-        "D": "n²"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "Negacja wyjścia ostatniego przerzutnika wraca na wejście pierwszego, co daje 2n stanów."
-    },
-    {
-      "id": 92,
-      "poziom": 11,
-      "nagroda": 500000,
-      "kategoria": "Liczniki",
-      "pytanie": "Ile różnych stanów (w standardowej pracy) ma licznik pierścieniowy (ring counter) zbudowany z n przerzutników?",
-      "odpowiedzi": {
-        "A": "2n",
-        "B": "2^n",
-        "C": "n",
-        "D": "n - 1"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "W rejestrze krąży pojedyncza jedynka (kod one-hot)."
-    },
-    {
       "id": 93,
-      "poziom": 11,
+      "poziom": 10,
       "nagroda": 500000,
       "kategoria": "Kody",
       "pytanie": "Co potrafi kod Hamminga (7,4)?",
@@ -1410,81 +1038,6 @@ window.MILIONERZY_DATA = {
       },
       "poprawna": "A",
       "wyjasnienie": "Minimalna odległość Hamminga wynosi 3."
-    },
-    {
-      "id": 94,
-      "poziom": 12,
-      "nagroda": 1000000,
-      "kategoria": "Kody",
-      "pytanie": "Ile minimalnie bitów parzystości potrzeba, by kodem Hamminga zabezpieczyć 4 bity danych i korygować błąd jednobitowy?",
-      "odpowiedzi": {
-        "A": "2",
-        "B": "4",
-        "C": "3",
-        "D": "1"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "Warunek 2^r ≥ m + r + 1 dla m = 4 daje r = 3."
-    },
-    {
-      "id": 95,
-      "poziom": 12,
-      "nagroda": 1000000,
-      "kategoria": "Sumatory",
-      "pytanie": "Na czym polega idea sumatora carry-select?",
-      "odpowiedzi": {
-        "A": "Przeniesienie jest wybierane przerzutnikiem D",
-        "B": "Dla bloku liczy się wynik dla obu możliwych przeniesień wejściowych, a poprawny wybiera multiplekser",
-        "C": "Sumator pracuje tylko dla zer",
-        "D": "Sumowanie odbywa się bit po bicie w kolejnych taktach"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "Pozwala skrócić opóźnienie kosztem zwiększenia liczby bramek."
-    },
-    {
-      "id": 96,
-      "poziom": 12,
-      "nagroda": 1000000,
-      "kategoria": "ALU",
-      "pytanie": "Do czego służy algorytm Bootha?",
-      "odpowiedzi": {
-        "A": "Do dzielenia liczb zmiennoprzecinkowych",
-        "B": "Do korekcji błędów w pamięci",
-        "C": "Do synchronizacji zegarów",
-        "D": "Do mnożenia liczb ze znakiem w U2 z wykorzystaniem rekodowania mnożnika"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "Rekodowanie pozwala ograniczyć liczbę dodawań dla ciągów jedynek w mnożniku."
-    },
-    {
-      "id": 97,
-      "poziom": 12,
-      "nagroda": 1000000,
-      "kategoria": "ALU",
-      "pytanie": "Do czego służy drzewo Wallace'a w mnożnikach sprzętowych?",
-      "odpowiedzi": {
-        "A": "Do dekodowania adresów",
-        "B": "Do redukcji liczby iloczynów częściowych za pomocą sumatorów (carry-save)",
-        "C": "Do generowania zegara",
-        "D": "Do zmniejszania liczby wejść bramek"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "Redukuje wiele iloczynów częściowych do dwóch wierszy, które sumuje szybki sumator."
-    },
-    {
-      "id": 98,
-      "poziom": 12,
-      "nagroda": 1000000,
-      "kategoria": "Rejestry",
-      "pytanie": "Ile maksymalnie różnych niezerowych stanów może wygenerować 4-bitowy rejestr LFSR (z wielomianem pierwotnym)?",
-      "odpowiedzi": {
-        "A": "4",
-        "B": "8",
-        "C": "16",
-        "D": "15"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "Maksymalna długość sekwencji to 2^n - 1 = 15, bo stan zerowy jest zablokowany."
     },
     {
       "id": 99,
@@ -1607,28 +1160,13 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "Dłuższa nóżka to anoda, a krótsza (przy ściętym brzegu obudowy) to katoda."
     },
     {
-      "id": 107,
-      "poziom": 1,
-      "nagroda": 500,
-      "kategoria": "CircuitPython",
-      "pytanie": "W jakim języku programowania pisze się programy w CircuitPython?",
-      "odpowiedzi": {
-        "A": "Python",
-        "B": "C++",
-        "C": "Java",
-        "D": "Assembler"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "CircuitPython to wersja Pythona dla mikrokontrolerów."
-    },
-    {
       "id": 108,
       "poziom": 1,
       "nagroda": 500,
       "kategoria": "Arduino / .ino",
       "pytanie": "Jakie rozszerzenie ma plik ze szkicem Arduino?",
       "odpowiedzi": {
-        "A": ".py",
+        "A": ".cpp",
         "B": ".exe",
         "C": ".ino",
         "D": ".html"
@@ -1683,7 +1221,7 @@ window.MILIONERZY_DATA = {
     },
     {
       "id": 112,
-      "poziom": 2,
+      "poziom": 6,
       "nagroda": 1000,
       "kategoria": "Elektronika",
       "pytanie": "Jak brzmi prawo Ohma?",
@@ -1725,21 +1263,6 @@ window.MILIONERZY_DATA = {
       },
       "poprawna": "D",
       "wyjasnienie": "Domyślnie uruchamiany jest plik code.py (lub main.py)."
-    },
-    {
-      "id": 115,
-      "poziom": 2,
-      "nagroda": 1000,
-      "kategoria": "CircuitPython",
-      "pytanie": "Jak nazywa się dysk wyświetlany w komputerze po podłączeniu płytki z CircuitPython?",
-      "odpowiedzi": {
-        "A": "CIRCUITPY",
-        "B": "BOOTDISK",
-        "C": "ARDUINO",
-        "D": "PYDRIVE"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "Płytka z CircuitPython pojawia się jako dysk USB o nazwie CIRCUITPY."
     },
     {
       "id": 116,
@@ -1794,7 +1317,7 @@ window.MILIONERZY_DATA = {
       "pytanie": "Jak przewodzi prąd zwykła dioda prostownicza?",
       "odpowiedzi": {
         "A": "W obu kierunkach tak samo",
-        "B": "Głównie w jednym kierunku, od anody do katody",
+        "B": "W jednym kierunku, od anody do katody",
         "C": "W ogóle nie przewodzi",
         "D": "Tylko prąd zmienny"
       },
@@ -1833,7 +1356,7 @@ window.MILIONERZY_DATA = {
     },
     {
       "id": 122,
-      "poziom": 3,
+      "poziom": 10,
       "nagroda": 2000,
       "kategoria": "Elektronika",
       "pytanie": "Ile wynosi rezystancja dwóch rezystorów 100 Ω połączonych równolegle?",
@@ -1953,7 +1476,7 @@ window.MILIONERZY_DATA = {
     },
     {
       "id": 130,
-      "poziom": 4,
+      "poziom": 10,
       "nagroda": 5000,
       "kategoria": "ESP32",
       "pytanie": "Jaki zakres wartości zwraca analogRead() na ESP32 przy domyślnej rozdzielczości ADC?",
@@ -1965,21 +1488,6 @@ window.MILIONERZY_DATA = {
       },
       "poprawna": "D",
       "wyjasnienie": "ESP32 ma 12-bitowy ADC, czyli 2^12 = 4096 wartości."
-    },
-    {
-      "id": 131,
-      "poziom": 4,
-      "nagroda": 5000,
-      "kategoria": "CircuitPython",
-      "pytanie": "Jaki zakres wartości zwraca właściwość value obiektu analogio.AnalogIn w CircuitPython?",
-      "odpowiedzi": {
-        "A": "0-65535",
-        "B": "0-1023",
-        "C": "0-255",
-        "D": "0-4095"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "CircuitPython skaluje odczyt ADC do zakresu 16-bitowego niezależnie od faktycznej rozdzielczości przetwornika."
     },
     {
       "id": 132,
@@ -1995,21 +1503,6 @@ window.MILIONERZY_DATA = {
       },
       "poprawna": "C",
       "wyjasnienie": "P = U · I = 5 · 0,2 = 1 W."
-    },
-    {
-      "id": 133,
-      "poziom": 4,
-      "nagroda": 5000,
-      "kategoria": "Elektronika",
-      "pytanie": "Do czego najczęściej służy dioda Zenera?",
-      "odpowiedzi": {
-        "A": "Do stabilizacji napięcia",
-        "B": "Do pomiaru temperatury",
-        "C": "Do magazynowania ładunku",
-        "D": "Do wzmacniania sygnałów"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "Dioda Zenera pracuje w kierunku zaporowym i utrzymuje niemal stałe napięcie."
     },
     {
       "id": 134,
@@ -2058,7 +1551,7 @@ window.MILIONERZY_DATA = {
     },
     {
       "id": 137,
-      "poziom": 5,
+      "poziom": 10,
       "nagroda": 10000,
       "kategoria": "Elektronika",
       "pytanie": "Czerwona dioda LED ma napięcie przewodzenia ok. 2 V i ma pobierać 20 mA przy zasilaniu 5 V. Jaki rezystor szeregowy jest potrzebny?",
@@ -2073,7 +1566,7 @@ window.MILIONERZY_DATA = {
     },
     {
       "id": 138,
-      "poziom": 5,
+      "poziom": 11,
       "nagroda": 10000,
       "kategoria": "Elektronika",
       "pytanie": "Dioda LED ma napięcie przewodzenia 1,8 V i ma pobierać 10 mA przy zasilaniu 3,3 V. Jaki rezystor szeregowy jest potrzebny?",
@@ -2091,7 +1584,7 @@ window.MILIONERZY_DATA = {
       "poziom": 5,
       "nagroda": 10000,
       "kategoria": "Elektronika",
-      "pytanie": "Dzielnik napięcia składa się z dwóch jednakowych rezystorów i jest zasilany napięciem 3,3 V. Jakie napięcie jest w punkcie środkowym?",
+      "pytanie": "Dzielnik napięcia składa się z dwóch rezystorów 100Ω i jest zasilany napięciem 3,3 V. Jakie napięcie jest w punkcie środkowym?",
       "odpowiedzi": {
         "A": "1,65 V",
         "B": "3,3 V",
@@ -2100,21 +1593,6 @@ window.MILIONERZY_DATA = {
       },
       "poprawna": "A",
       "wyjasnienie": "U_wy = U_we · R2 / (R1 + R2) = 3,3 V / 2 = 1,65 V."
-    },
-    {
-      "id": 140,
-      "poziom": 5,
-      "nagroda": 10000,
-      "kategoria": "Elektronika",
-      "pytanie": "Jaka jest typowa wartość rezystora podciągającego (pull-up) przy przycisku?",
-      "odpowiedzi": {
-        "A": "10 Ω",
-        "B": "1 Ω",
-        "C": "10 kΩ",
-        "D": "10 MΩ"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "10 kΩ zapewnia pewny stan HIGH przy niewielkim poborze prądu."
     },
     {
       "id": 141,
@@ -2130,36 +1608,6 @@ window.MILIONERZY_DATA = {
       },
       "poprawna": "A",
       "wyjasnienie": "Styki mechaniczne odbijają się, co może być odczytane jako wiele naciśnięć, więc stosuje się debouncing."
-    },
-    {
-      "id": 142,
-      "poziom": 5,
-      "nagroda": 10000,
-      "kategoria": "Elektronika",
-      "pytanie": "Jaką cyfrę oznacza kolor brązowy w kodzie paskowym rezystorów?",
-      "odpowiedzi": {
-        "A": "0",
-        "B": "2",
-        "C": "5",
-        "D": "1"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "Czarny = 0, brązowy = 1, czerwony = 2, pomarańczowy = 3."
-    },
-    {
-      "id": 143,
-      "poziom": 5,
-      "nagroda": 10000,
-      "kategoria": "Elektronika",
-      "pytanie": "Rezystor ma paski: brązowy, czarny, czerwony. Jaka jest jego nominalna wartość?",
-      "odpowiedzi": {
-        "A": "100 Ω",
-        "B": "1 kΩ",
-        "C": "10 kΩ",
-        "D": "102 Ω"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "Cyfry 1 i 0, mnożnik 100 (czerwony): 10 · 100 = 1000 Ω."
     },
     {
       "id": 144,
@@ -2208,7 +1656,7 @@ window.MILIONERZY_DATA = {
     },
     {
       "id": 147,
-      "poziom": 6,
+      "poziom": 10,
       "nagroda": 20000,
       "kategoria": "Protokoły",
       "pytanie": "Który protokół komunikacji używa linii SDA i SCL?",
@@ -2220,21 +1668,6 @@ window.MILIONERZY_DATA = {
       },
       "poprawna": "A",
       "wyjasnienie": "I2C to dwuprzewodowa magistrala: SDA (dane) i SCL (zegar)."
-    },
-    {
-      "id": 148,
-      "poziom": 6,
-      "nagroda": 20000,
-      "kategoria": "Protokoły",
-      "pytanie": "Ile linii sygnałowych (bez GND) ma standardowa magistrala SPI z jednym urządzeniem podrzędnym?",
-      "odpowiedzi": {
-        "A": "2",
-        "B": "3",
-        "C": "4",
-        "D": "6"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "MOSI, MISO, SCK i CS."
     },
     {
       "id": 149,
@@ -2261,7 +1694,7 @@ window.MILIONERZY_DATA = {
         "A": "TX z TX i RX z RX",
         "B": "Tylko masą",
         "C": "Tylko linią TX",
-        "D": "TX jednego z RX drugiego i odwrotnie, plus wspólna masa"
+        "D": "TX z RX i RX z TX"
       },
       "poprawna": "D",
       "wyjasnienie": "Nadajnik jednego urządzenia musi trafiać do odbiornika drugiego."
@@ -2282,36 +1715,6 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "3,3 V · 0,25 = 0,825 V."
     },
     {
-      "id": 152,
-      "poziom": 6,
-      "nagroda": 20000,
-      "kategoria": "Elektronika",
-      "pytanie": "Jaki jest typowy okres sygnału PWM sterującego serwem modelarskim?",
-      "odpowiedzi": {
-        "A": "1 ms",
-        "B": "2 ms",
-        "C": "20 ms",
-        "D": "200 ms"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "Typowo 50 Hz, czyli 20 ms, z impulsem 1-2 ms określającym pozycję."
-    },
-    {
-      "id": 153,
-      "poziom": 6,
-      "nagroda": 20000,
-      "kategoria": "CircuitPython",
-      "pytanie": "Który moduł CircuitPython służy do generowania sygnału PWM?",
-      "odpowiedzi": {
-        "A": "digitalio",
-        "B": "pwmio",
-        "C": "analogio",
-        "D": "neopixel"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "Klasa pwmio.PWMOut generuje PWM, a wypełnienie ustawia się właściwością duty_cycle."
-    },
-    {
       "id": 154,
       "poziom": 6,
       "nagroda": 20000,
@@ -2325,66 +1728,6 @@ window.MILIONERZY_DATA = {
       },
       "poprawna": "D",
       "wyjasnienie": "Pozwala reagować na zmiany stanu pinu (np. zbocze) bez ciągłego odpytywania."
-    },
-    {
-      "id": 155,
-      "poziom": 7,
-      "nagroda": 40000,
-      "kategoria": "RP2040",
-      "pytanie": "Ile rdzeni procesora ma układ RP2040?",
-      "odpowiedzi": {
-        "A": "2",
-        "B": "1",
-        "C": "4",
-        "D": "8"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "RP2040 ma dwa rdzenie ARM Cortex-M0+."
-    },
-    {
-      "id": 156,
-      "poziom": 7,
-      "nagroda": 40000,
-      "kategoria": "RP2040",
-      "pytanie": "Czym jest PIO w układzie RP2040?",
-      "odpowiedzi": {
-        "A": "Zewnętrzną pamięcią Flash",
-        "B": "Interfejsem USB",
-        "C": "Programowalnymi blokami wejścia/wyjścia do własnych protokołów",
-        "D": "Przetwornikiem ADC"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "PIO (Programmable I/O) pozwala tworzyć własne interfejsy sprzętowe, np. WS2812 czy VGA."
-    },
-    {
-      "id": 157,
-      "poziom": 7,
-      "nagroda": 40000,
-      "kategoria": "RP2040",
-      "pytanie": "Jaki rdzeń ARM zawiera RP2040?",
-      "odpowiedzi": {
-        "A": "ARM Cortex-M0+",
-        "B": "ARM Cortex-M4",
-        "C": "Xtensa LX6",
-        "D": "AVR"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "RP2040 ma dwa rdzenie Cortex-M0+, domyślnie do 133 MHz."
-    },
-    {
-      "id": 158,
-      "poziom": 7,
-      "nagroda": 40000,
-      "kategoria": "RP2040",
-      "pytanie": "Ile pamięci SRAM ma RP2040?",
-      "odpowiedzi": {
-        "A": "32 KB",
-        "B": "2 KB",
-        "C": "520 KB",
-        "D": "264 KB"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "RP2040 ma 264 KB SRAM."
     },
     {
       "id": 159,
@@ -2417,36 +1760,6 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "UF2 to format firmware obsługiwany przez bootloader Pico."
     },
     {
-      "id": 161,
-      "poziom": 7,
-      "nagroda": 40000,
-      "kategoria": "CircuitPython",
-      "pytanie": "Czym jest CircuitPython?",
-      "odpowiedzi": {
-        "A": "Edytorem kodu",
-        "B": "Odmianą MicroPythona rozwijaną przez Adafruit",
-        "C": "Sterownikiem USB",
-        "D": "Nazwą płytki"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "CircuitPython to fork MicroPythona nastawiony na łatwość nauki i obsługę wielu płytek."
-    },
-    {
-      "id": 162,
-      "poziom": 7,
-      "nagroda": 40000,
-      "kategoria": "CircuitPython",
-      "pytanie": "Jak nazywa się narzędzie wiersza poleceń do instalowania bibliotek CircuitPython?",
-      "odpowiedzi": {
-        "A": "npm",
-        "B": "make",
-        "C": "avrdude",
-        "D": "circup"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "circup instaluje i aktualizuje biblioteki na płytce z CircuitPython."
-    },
-    {
       "id": 163,
       "poziom": 7,
       "nagroda": 40000,
@@ -2463,13 +1776,13 @@ window.MILIONERZY_DATA = {
     },
     {
       "id": 164,
-      "poziom": 8,
+      "poziom": 6,
       "nagroda": 75000,
       "kategoria": "CircuitPython",
       "pytanie": "Co robi time.sleep(0.5) w CircuitPython?",
       "odpowiedzi": {
         "A": "Czeka 5 sekund",
-        "B": "Czeka 0,5 milisekundy",
+        "B": "Czeka pół godziny",
         "C": "Wstrzymuje program na pół sekundy",
         "D": "Wyłącza płytkę"
       },
@@ -2522,36 +1835,6 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "WL_CONNECTED oznacza, że ESP32 jest połączone z siecią."
     },
     {
-      "id": 168,
-      "poziom": 8,
-      "nagroda": 75000,
-      "kategoria": "ESP32",
-      "pytanie": "Jaka architektura procesora jest używana w klasycznym ESP32?",
-      "odpowiedzi": {
-        "A": "AVR",
-        "B": "ARM Cortex-M0+",
-        "C": "Xtensa",
-        "D": "MIPS"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "Klasyczne ESP32 ma dwa rdzenie Xtensa LX6."
-    },
-    {
-      "id": 169,
-      "poziom": 8,
-      "nagroda": 75000,
-      "kategoria": "ESP32",
-      "pytanie": "Do jakiej maksymalnej częstotliwości taktuje się rdzenie klasycznego ESP32?",
-      "odpowiedzi": {
-        "A": "16 MHz",
-        "B": "240 MHz",
-        "C": "1 GHz",
-        "D": "48 MHz"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "Klasyczne ESP32 pracuje do 240 MHz."
-    },
-    {
       "id": 170,
       "poziom": 8,
       "nagroda": 75000,
@@ -2567,64 +1850,19 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "Przy niezgodności prędkości w terminalu pojawią się nieczytelne znaki."
     },
     {
-      "id": 171,
-      "poziom": 8,
-      "nagroda": 75000,
-      "kategoria": "Programowanie embedded",
-      "pytanie": "Do czego służy słowo kluczowe volatile w C/C++?",
-      "odpowiedzi": {
-        "A": "Informuje kompilator, że zmienna może się zmienić poza normalnym przepływem kodu (np. w przerwaniu)",
-        "B": "Zwiększa prędkość zmiennej",
-        "C": "Zapisuje zmienną w pamięci Flash na stałe",
-        "D": "Wyłącza przerwania"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "Dzięki volatile kompilator nie optymalizuje zmiennej i zawsze czyta jej aktualną wartość."
-    },
-    {
       "id": 172,
       "poziom": 8,
       "nagroda": 75000,
       "kategoria": "Programowanie embedded",
       "pytanie": "Co robi zapis #define LED_PIN 2 w szkicu Arduino?",
       "odpowiedzi": {
-        "A": "Tworzy funkcję",
+        "A": "Tworzy funkcję LED_PIN",
         "B": "Alokuje pamięć we Flash",
         "C": "Definiuje makro zastępowane przez preprocesor wartością 2",
         "D": "Uruchamia pin 2"
       },
       "poprawna": "C",
       "wyjasnienie": "Preprocesor zamienia każde wystąpienie LED_PIN na 2 jeszcze przed kompilacją."
-    },
-    {
-      "id": 173,
-      "poziom": 9,
-      "nagroda": 125000,
-      "kategoria": "Elektronika",
-      "pytanie": "Po co stosuje się rezystor w bazie tranzystora NPN pracującego jako klucz?",
-      "odpowiedzi": {
-        "A": "Ogranicza prąd bazy",
-        "B": "Zwiększa napięcie zasilania",
-        "C": "Zmienia typ tranzystora",
-        "D": "Przyspiesza zegar"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "Bez rezystora prąd bazy mógłby być zbyt duży i uszkodzić tranzystor lub pin mikrokontrolera."
-    },
-    {
-      "id": 174,
-      "poziom": 9,
-      "nagroda": 125000,
-      "kategoria": "Elektronika",
-      "pytanie": "Po co równolegle do cewki przekaźnika podłącza się diodę (flyback)?",
-      "odpowiedzi": {
-        "A": "Zwiększa napięcie",
-        "B": "Zmniejsza zużycie energii",
-        "C": "Służy jako LED kontrolna",
-        "D": "Chroni tranzystor przed przepięciem po wyłączeniu cewki"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "Wyłączona cewka generuje wysokie napięcie indukcji, które dioda zwiera."
     },
     {
       "id": 175,
@@ -2640,21 +1878,6 @@ window.MILIONERZY_DATA = {
       },
       "poprawna": "B",
       "wyjasnienie": "Pin GPIO daje tylko kilkanaście miliamperów, a silnik pobiera znacznie więcej."
-    },
-    {
-      "id": 176,
-      "poziom": 9,
-      "nagroda": 125000,
-      "kategoria": "Elektronika",
-      "pytanie": "Ile wynosi w przybliżeniu rozdzielczość napięciowa (1 LSB) 12-bitowego ADC z napięciem odniesienia 3,3 V?",
-      "odpowiedzi": {
-        "A": "3,3 V",
-        "B": "33 mV",
-        "C": "0,8 mV",
-        "D": "3,3 µV"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "3,3 V / 4096 ≈ 0,8 mV."
     },
     {
       "id": 177,
@@ -2673,7 +1896,7 @@ window.MILIONERZY_DATA = {
     },
     {
       "id": 178,
-      "poziom": 9,
+      "poziom": 12,
       "nagroda": 125000,
       "kategoria": "Programowanie embedded",
       "pytanie": "Jaka powinna być procedura obsługi przerwania (ISR)?",
@@ -2702,23 +1925,8 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "W deep sleep pracuje tylko minimum układów, np. RTC."
     },
     {
-      "id": 180,
-      "poziom": 10,
-      "nagroda": 250000,
-      "kategoria": "ESP32",
-      "pytanie": "Które piny ADC w klasycznym ESP32 nie działają, gdy używane jest Wi-Fi?",
-      "odpowiedzi": {
-        "A": "ADC1",
-        "B": "Oba ADC",
-        "C": "ADC2",
-        "D": "Żadne"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "ADC2 jest współdzielony z Wi-Fi, więc do pomiarów przy włączonym Wi-Fi używa się ADC1."
-    },
-    {
       "id": 181,
-      "poziom": 10,
+      "poziom": 9,
       "nagroda": 250000,
       "kategoria": "CircuitPython",
       "pytanie": "Który plik w CircuitPython wykonuje się przed uruchomieniem USB i pozwala np. ukryć dysk CIRCUITPY?",
@@ -2732,53 +1940,8 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "boot.py uruchamia się raz na starcie, przed inicjalizacją USB."
     },
     {
-      "id": 182,
-      "poziom": 10,
-      "nagroda": 250000,
-      "kategoria": "RP2040",
-      "pytanie": "Gdzie przechowywany jest program w płytce Raspberry Pi Pico?",
-      "odpowiedzi": {
-        "A": "We wbudowanym Flash w RP2040",
-        "B": "W pamięci EEPROM",
-        "C": "W ROM układu RP2040",
-        "D": "W zewnętrznej pamięci Flash QSPI"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "RP2040 nie ma wbudowanej pamięci Flash, a Pico ma zewnętrzną pamięć QSPI (2 MB)."
-    },
-    {
-      "id": 183,
-      "poziom": 10,
-      "nagroda": 250000,
-      "kategoria": "RP2040",
-      "pytanie": "Ile maszyn stanów PIO ma RP2040?",
-      "odpowiedzi": {
-        "A": "4",
-        "B": "8",
-        "C": "2",
-        "D": "16"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "Są dwa bloki PIO po cztery maszyny stanów, czyli razem 8."
-    },
-    {
-      "id": 184,
-      "poziom": 10,
-      "nagroda": 250000,
-      "kategoria": "Programowanie embedded",
-      "pytanie": "Do czego służy kontroler DMA w mikrokontrolerze?",
-      "odpowiedzi": {
-        "A": "Do łączenia z Wi-Fi",
-        "B": "Do szyfrowania danych",
-        "C": "Do przesyłania danych między pamięcią a peryferiami bez udziału CPU",
-        "D": "Do usypiania procesora"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "DMA odciąża procesor przy przesyłaniu dużych ilości danych."
-    },
-    {
       "id": 185,
-      "poziom": 10,
+      "poziom": 4,
       "nagroda": 250000,
       "kategoria": "RP2040",
       "pytanie": "Czym różni się Raspberry Pi Pico W od zwykłego Pico?",
@@ -2793,7 +1956,7 @@ window.MILIONERZY_DATA = {
     },
     {
       "id": 186,
-      "poziom": 10,
+      "poziom": 11,
       "nagroda": 250000,
       "kategoria": "Protokoły",
       "pytanie": "Dlaczego linie I2C wymagają rezystorów podciągających?",
@@ -2805,66 +1968,6 @@ window.MILIONERZY_DATA = {
       },
       "poprawna": "D",
       "wyjasnienie": "Urządzenia tylko zwierają linię do masy, a stan wysoki powstaje przez pull-up."
-    },
-    {
-      "id": 187,
-      "poziom": 11,
-      "nagroda": 500000,
-      "kategoria": "ESP32",
-      "pytanie": "Do czego służy atrybut IRAM_ATTR przed funkcją obsługi przerwania na ESP32?",
-      "odpowiedzi": {
-        "A": "Umieszcza funkcję w pamięci IRAM, żeby wykonywała się szybko i niezawodnie",
-        "B": "Szyfruje funkcję",
-        "C": "Zwiększa zegar procesora",
-        "D": "Wyłącza Wi-Fi"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "Funkcje ISR powinny być w IRAM, bo pamięć Flash może być chwilowo niedostępna."
-    },
-    {
-      "id": 188,
-      "poziom": 11,
-      "nagroda": 500000,
-      "kategoria": "ESP32",
-      "pytanie": "Na jakim systemie operacyjnym czasu rzeczywistego działa Arduino core dla ESP32?",
-      "odpowiedzi": {
-        "A": "Linux",
-        "B": "Windows",
-        "C": "FreeRTOS",
-        "D": "Brak, tylko bare-metal"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "Arduino-ESP32 działa na FreeRTOS, a setup() i loop() to jedno z zadań."
-    },
-    {
-      "id": 189,
-      "poziom": 11,
-      "nagroda": 500000,
-      "kategoria": "ESP32",
-      "pytanie": "Jak ESP32 generuje PWM w funkcjach ledc*?",
-      "odpowiedzi": {
-        "A": "Sprzętowym kontrolerem LEDC",
-        "B": "Wyłącznie programowo przez delay()",
-        "C": "Przez DAC",
-        "D": "Przez UART"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "LEDC to sprzętowy generator PWM w ESP32."
-    },
-    {
-      "id": 190,
-      "poziom": 11,
-      "nagroda": 500000,
-      "kategoria": "ESP32",
-      "pytanie": "Ile kanałów DAC i jaką rozdzielczość ma klasyczne ESP32?",
-      "odpowiedzi": {
-        "A": "1 kanał 12 bit",
-        "B": "4 kanały 10 bit",
-        "C": "Brak DAC",
-        "D": "2 kanały 8 bit"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "Klasyczne ESP32 ma dwa 8-bitowe DAC-i na GPIO25 i GPIO26."
     },
     {
       "id": 191,
@@ -2882,53 +1985,8 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "To odpowiednik millis(), używany do nieblokującego odmierzania czasu."
     },
     {
-      "id": 192,
-      "poziom": 11,
-      "nagroda": 500000,
-      "kategoria": "Elektronika",
-      "pytanie": "Jakie jest typowe napięcie w pełni naładowanego ogniwa Li-Ion?",
-      "odpowiedzi": {
-        "A": "3,0 V",
-        "B": "3,7 V",
-        "C": "4,2 V",
-        "D": "5,0 V"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "3,7 V to napięcie nominalne, a po pełnym naładowaniu ogniwo ma 4,2 V."
-    },
-    {
-      "id": 193,
-      "poziom": 11,
-      "nagroda": 500000,
-      "kategoria": "Elektronika",
-      "pytanie": "Co robi stabilizator LDO?",
-      "odpowiedzi": {
-        "A": "Podnosi napięcie",
-        "B": "Utrzymuje stałe, niższe napięcie wyjściowe z wyższego napięcia wejściowego",
-        "C": "Zamienia prąd zmienny na stały",
-        "D": "Filtruje sygnały RF"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "LDO (Low Dropout) to liniowy stabilizator działający już przy małej różnicy napięć."
-    },
-    {
-      "id": 194,
-      "poziom": 12,
-      "nagroda": 1000000,
-      "kategoria": "RP2040",
-      "pytanie": "Ile kanałów ADC RP2040 jest dostępnych na pinach GPIO?",
-      "odpowiedzi": {
-        "A": "2",
-        "B": "8",
-        "C": "6",
-        "D": "4"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "Wejścia ADC są na GPIO26-29, a piąty kanał to wewnętrzny czujnik temperatury."
-    },
-    {
       "id": 195,
-      "poziom": 12,
+      "poziom": 3,
       "nagroda": 1000000,
       "kategoria": "RP2040",
       "pytanie": "Czy piny GPIO RP2040 tolerują napięcie 5 V?",
@@ -2946,14 +2004,14 @@ window.MILIONERZY_DATA = {
       "poziom": 12,
       "nagroda": 1000000,
       "kategoria": "ESP32",
-      "pytanie": "Dlaczego na klasycznych modułach ESP32 nie zaleca się używać pinów GPIO6-GPIO11?",
+      "pytanie": "Dlaczego na klasycznych modułach ESP32 nie zaleca się używać pinów GPIO0 i GPIO1?",
       "odpowiedzi": {
-        "A": "Są zarezerwowane do USB",
+        "A": "Pełnią krytyczne funkcje systemowe podczas bootowania oraz komunikacji",
         "B": "Działają tylko jako wyjścia",
         "C": "Są podłączone do wewnętrznej pamięci Flash SPI",
         "D": "Nie istnieją"
       },
-      "poprawna": "C",
+      "poprawna": "A",
       "wyjasnienie": "Te piny obsługują pamięć Flash, więc ich użycie może zawiesić program."
     },
     {
@@ -2972,55 +2030,10 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "Zakres duty_cycle to 0-65535, więc 32768 to połowa."
     },
     {
-      "id": 198,
-      "poziom": 12,
-      "nagroda": 1000000,
-      "kategoria": "RP2040",
-      "pytanie": "Dlaczego PIO w RP2040 jest lepsze od bit-bangingu na CPU?",
-      "odpowiedzi": {
-        "A": "Dostarcza wyższe napięcie",
-        "B": "Ma większą pamięć Flash",
-        "C": "Zastępuje wszystkie piny GPIO",
-        "D": "Działa niezależnie od rdzeni CPU i zapewnia deterministyczne taktowanie"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "Maszyny stanów PIO wykonują programy niezależnie, dzięki czemu timing nie zależy od obciążenia procesora."
-    },
-    {
-      "id": 199,
-      "poziom": 12,
-      "nagroda": 1000000,
-      "kategoria": "Programowanie embedded",
-      "pytanie": "Co robi instrukcja PORTB |= (1 << 5); na ATmega328P?",
-      "odpowiedzi": {
-        "A": "Zeruje bit 5 portu B",
-        "B": "Ustawia bit 5 portu B na 1",
-        "C": "Przełącza bit 5 portu B",
-        "D": "Odczytuje bit 5 portu B"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "Operacja OR z maską 1<<5 ustawia tylko piąty bit (w Uno to pin 13) bez zmiany pozostałych."
-    },
-    {
-      "id": 200,
-      "poziom": 12,
-      "nagroda": 1000000,
-      "kategoria": "RP2040",
-      "pytanie": "Jaka jest maksymalna częstotliwość taktowania rdzeni RP2040 według specyfikacji układu?",
-      "odpowiedzi": {
-        "A": "48 MHz",
-        "B": "80 MHz",
-        "C": "133 MHz",
-        "D": "240 MHz"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "Specyfikacja podaje do 133 MHz (domyślnie Pico SDK ustawia 125 MHz)."
-    },
-    {
       "id": 201,
       "poziom": 1,
       "nagroda": 500,
-      "kategoria": "Bramki (obrazek)",
+      "kategoria": "Bramki",
       "pytanie": "Jaką bramkę logiczną przedstawia symbol na obrazku?",
       "obrazek": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg",
       "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:AND_ANSI.svg",
@@ -3037,7 +2050,7 @@ window.MILIONERZY_DATA = {
       "id": 202,
       "poziom": 1,
       "nagroda": 500,
-      "kategoria": "Płytki (obrazek)",
+      "kategoria": "Mikrokontrolery",
       "pytanie": "Jaka popularna płytka rozwojowa jest widoczna na zdjęciu?",
       "obrazek": "https://upload.wikimedia.org/wikipedia/commons/3/38/Arduino_Uno_-_R3.jpg",
       "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Arduino_Uno_-_R3.jpg",
@@ -3054,7 +2067,7 @@ window.MILIONERZY_DATA = {
       "id": 203,
       "poziom": 1,
       "nagroda": 500,
-      "kategoria": "Elektronika (obrazek)",
+      "kategoria": "Elektronika",
       "pytanie": "Do czego służy element widoczny na zdjęciu?",
       "obrazek": "https://upload.wikimedia.org/wikipedia/commons/7/73/400_points_breadboard.jpg",
       "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:400_points_breadboard.jpg",
@@ -3071,7 +2084,7 @@ window.MILIONERZY_DATA = {
       "id": 204,
       "poziom": 2,
       "nagroda": 1000,
-      "kategoria": "Bramki (obrazek)",
+      "kategoria": "Bramki",
       "pytanie": "Jaką bramkę logiczną przedstawia symbol na obrazku?",
       "obrazek": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg",
       "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:OR_ANSI.svg",
@@ -3085,30 +2098,12 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "Symbol z wklęsłą tylną krawędzią i ostrym przodem to bramka OR (suma logiczna)."
     },
     {
-      "id": 205,
-      "poziom": 2,
-      "nagroda": 1000,
-      "kategoria": "RP2040 (obrazek)",
-      "pytanie": "Jaka płytka z mikrokontrolerem RP2040 jest widoczna na zdjęciu?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/3/38/Raspberry_Pi_Pico_top.jpg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_Pico_top.jpg",
-      "odpowiedzi": {
-        "A": "Arduino Nano",
-        "B": "Raspberry Pi Pico",
-        "C": "ESP32 DevKit",
-        "D": "Teensy 4.1"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "To Raspberry Pi Pico z układem RP2040."
-    },
-    {
       "id": 206,
-      "poziom": 2,
+      "poziom": 9,
       "nagroda": 1000,
-      "kategoria": "ESP32 (obrazek)",
-      "pytanie": "Na jakim mikrokontrolerze oparta jest płytka widoczna na zdjęciu?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/c/c2/ESP32_Dev_Board.jpg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:ESP32_Dev_Board.jpg",
+      "kategoria": "Mikrokontrolery",
+      "pytanie": "Jaki mikrokontroler jest widoczny na zdjęciu?",
+      "obrazek": "https://mm.digikey.com/Volume0/opasdata/d220001/derivates/1/001/170/305/1965_ESP32-C6-WROOM-1-N8_sml%28200x200%29.jpg",
       "odpowiedzi": {
         "A": "ATmega328P",
         "B": "RP2040",
@@ -3122,7 +2117,7 @@ window.MILIONERZY_DATA = {
       "id": 207,
       "poziom": 3,
       "nagroda": 2000,
-      "kategoria": "Bramki (obrazek)",
+      "kategoria": "Bramki",
       "pytanie": "Jaki stan ma wyjście bramki z obrazka, gdy oba wejścia są w stanie 1?",
       "obrazek": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg",
       "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:NAND_ANSI.svg",
@@ -3139,7 +2134,7 @@ window.MILIONERZY_DATA = {
       "id": 208,
       "poziom": 3,
       "nagroda": 2000,
-      "kategoria": "Bramki (obrazek)",
+      "kategoria": "Bramki",
       "pytanie": "Jaki stan ma wyjście bramki z obrazka dla wejść A = 1 i B = 0?",
       "obrazek": "https://upload.wikimedia.org/wikipedia/commons/0/01/XOR_ANSI.svg",
       "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:XOR_ANSI.svg",
@@ -3154,12 +2149,10 @@ window.MILIONERZY_DATA = {
     },
     {
       "id": 209,
-      "poziom": 3,
+      "poziom": 4,
       "nagroda": 2000,
-      "kategoria": "Elektronika (obrazek)",
-      "pytanie": "Ile wyprowadzeń ma typowa dioda LED RGB widoczna na zdjęciu (trzy kolory i wspólna elektroda)?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/a/ad/RGB_light-emitting_diode.jpg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:RGB_light-emitting_diode.jpg",
+      "kategoria": "Elektronika",
+      "pytanie": "Ile wyprowadzeń ma typowa dioda LED RGB?",
       "odpowiedzi": {
         "A": "4",
         "B": "2",
@@ -3173,7 +2166,7 @@ window.MILIONERZY_DATA = {
       "id": 210,
       "poziom": 4,
       "nagroda": 5000,
-      "kategoria": "Sumatory (obrazek)",
+      "kategoria": "Układy",
       "pytanie": "Jaki układ cyfrowy przedstawia schemat?",
       "obrazek": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Half_Adder.svg",
       "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Half_Adder.svg",
@@ -3190,7 +2183,7 @@ window.MILIONERZY_DATA = {
       "id": 211,
       "poziom": 4,
       "nagroda": 5000,
-      "kategoria": "Bramki (obrazek)",
+      "kategoria": "Bramki",
       "pytanie": "Jaki stan ma wyjście bramki z obrazka dla wejść 0 i 0?",
       "obrazek": "https://upload.wikimedia.org/wikipedia/commons/6/6c/NOR_ANSI.svg",
       "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:NOR_ANSI.svg",
@@ -3204,44 +2197,10 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "To bramka NOR: 0 OR 0 = 0, a po negacji wyjście wynosi 1."
     },
     {
-      "id": 212,
-      "poziom": 4,
-      "nagroda": 5000,
-      "kategoria": "Elektronika (obrazek)",
-      "pytanie": "Ile segmentów (nie licząc kropki dziesiętnej) ma wyświetlacz widoczny na zdjęciu?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/e/ec/LED_seven_segment_display_on_a_digital_clock_(16041065485).jpg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:LED_seven_segment_display_on_a_digital_clock_(16041065485).jpg",
-      "odpowiedzi": {
-        "A": "5",
-        "B": "8",
-        "C": "7",
-        "D": "14"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "To wyświetlacz siedmiosegmentowy, stąd jego nazwa."
-    },
-    {
-      "id": 213,
-      "poziom": 5,
-      "nagroda": 10000,
-      "kategoria": "Sumatory (obrazek)",
-      "pytanie": "Ile wejść ma układ przedstawiony na schemacie?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Full-adder.svg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Full-adder.svg",
-      "odpowiedzi": {
-        "A": "2",
-        "B": "3 (A, B i przeniesienie wejściowe)",
-        "C": "4",
-        "D": "1"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "Pełny sumator dodaje dwa bity oraz przeniesienie z poprzedniego stopnia."
-    },
-    {
       "id": 214,
       "poziom": 5,
       "nagroda": 10000,
-      "kategoria": "Bramki (obrazek)",
+      "kategoria": "Bramki",
       "pytanie": "Jaką bramkę przedstawia symbol i kiedy daje ona na wyjściu 1?",
       "obrazek": "https://upload.wikimedia.org/wikipedia/commons/d/d6/XNOR_ANSI.svg",
       "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:XNOR_ANSI.svg",
@@ -3253,23 +2212,6 @@ window.MILIONERZY_DATA = {
       },
       "poprawna": "D",
       "wyjasnienie": "XNOR to zanegowany XOR, więc daje 1 przy jednakowych wejściach."
-    },
-    {
-      "id": 215,
-      "poziom": 5,
-      "nagroda": 10000,
-      "kategoria": "Układy kombinacyjne (obrazek)",
-      "pytanie": "Jaki układ jest przedstawiony na schemacie?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/4/46/4-to-1_multiplexer.svg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:4-to-1_multiplexer.svg",
-      "odpowiedzi": {
-        "A": "Multiplekser 4:1",
-        "B": "Dekoder 2 na 4",
-        "C": "Demultiplekser 1:4",
-        "D": "Sumator"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "Multiplekser 4:1 wybiera jedno z czterech wejść danych za pomocą dwóch wejść adresowych."
     },
     {
       "id": 216,
@@ -3292,12 +2234,12 @@ window.MILIONERZY_DATA = {
       "id": 217,
       "poziom": 6,
       "nagroda": 20000,
-      "kategoria": "Przerzutniki (obrazek)",
+      "kategoria": "Układy",
       "pytanie": "Jaki układ tworzą dwie skrośnie sprzężone bramki NOR widoczne na schemacie?",
       "obrazek": "https://upload.wikimedia.org/wikipedia/commons/5/53/RS_Flip-flop_(NOR).svg",
       "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:RS_Flip-flop_(NOR).svg",
       "odpowiedzi": {
-        "A": "Przerzutnik (zatrzask) SR",
+        "A": "Zatrzask",
         "B": "Półsumator",
         "C": "Multiplekser",
         "D": "Generator zegara"
@@ -3306,32 +2248,15 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "Dwie skrośnie sprzężone bramki NOR tworzą najprostszy zatrzask SR."
     },
     {
-      "id": 218,
-      "poziom": 6,
-      "nagroda": 20000,
-      "kategoria": "Elektronika (obrazek)",
-      "pytanie": "Ile wyprowadzeń ma element oznaczany takim symbolem?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/1/19/Potentiometer_symbol.svg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Potentiometer_symbol.svg",
-      "odpowiedzi": {
-        "A": "2",
-        "B": "4",
-        "C": "5",
-        "D": "3"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "Potencjometr ma dwa końce ścieżki rezystancyjnej i wyprowadzenie suwaka."
-    },
-    {
       "id": 219,
       "poziom": 7,
       "nagroda": 40000,
-      "kategoria": "Elektronika (obrazek)",
+      "kategoria": "Elektronika",
       "pytanie": "Schemat przedstawia dzielnik napięcia z dwóch rezystorów R1 i R2, a napięcie wyjściowe jest pobierane z R2. Jakie napięcie wyjściowe otrzymamy przy R1 = R2?",
       "obrazek": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Voltage_divider.svg",
       "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Voltage_divider.svg",
       "odpowiedzi": {
-        "A": "Całe napięcie wejściowe",
+        "A": "Logarytm naturalny z napięcia wejściowego",
         "B": "Połowę napięcia wejściowego",
         "C": "Zero",
         "D": "Dwukrotność napięcia wejściowego"
@@ -3340,49 +2265,14 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "U_wy = U_we · R2 / (R1 + R2) = U_we / 2."
     },
     {
-      "id": 220,
-      "poziom": 7,
-      "nagroda": 40000,
-      "kategoria": "Protokoły (obrazek)",
-      "pytanie": "Do czego na schemacie magistrali I2C służą rezystory podłączone między liniami SDA i SCL a zasilaniem?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/3/3e/I2C.svg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:I2C.svg",
-      "odpowiedzi": {
-        "A": "Do ograniczania prądu diod LED",
-        "B": "Do zasilania urządzeń podrzędnych",
-        "C": "Jako rezystory podciągające (pull-up) dla linii typu open-drain",
-        "D": "Do zwiększania prędkości zegara"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "Urządzenia na I2C tylko zwierają linię do masy, a stan wysoki zapewniają pull-upy."
-    },
-    {
-      "id": 221,
-      "poziom": 8,
-      "nagroda": 75000,
-      "kategoria": "Protokoły (obrazek)",
-      "pytanie": "Ile linii sygnałowych (bez GND) ma magistrala SPI z trzema urządzeniami podrzędnymi, jeśli współdzielone są MOSI, MISO i SCK, a każde urządzenie ma osobną linię wyboru SS?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/f/fc/SPI_three_slaves.svg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:SPI_three_slaves.svg",
-      "odpowiedzi": {
-        "A": "4",
-        "B": "6",
-        "C": "5",
-        "D": "3"
-      },
-      "poprawna": "B",
-      "wyjasnienie": "3 linie wspólne (MOSI, MISO, SCK) + 3 osobne linie SS = 6."
-    },
-    {
       "id": 222,
       "poziom": 8,
       "nagroda": 75000,
-      "kategoria": "PWM (obrazek)",
+      "kategoria": "PWM",
       "pytanie": "Jaki parametr sygnału PWM zmienia się na przebiegach o różnej proporcji czasu stanu wysokiego do okresu?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Duty_Cycle_Examples.png",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Duty_Cycle_Examples.png",
+      "obrazek": "https://storage.tameson.com/asset/Articles/general/duty-cycle.png",
       "odpowiedzi": {
-        "A": "Częstotliwość nośna",
+        "A": "Częstotliwość nośna (carrier frequency)",
         "B": "Amplituda",
         "C": "Faza",
         "D": "Współczynnik wypełnienia (duty cycle)"
@@ -3391,79 +2281,11 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "Wypełnienie to stosunek czasu stanu wysokiego do okresu sygnału."
     },
     {
-      "id": 223,
-      "poziom": 9,
-      "nagroda": 125000,
-      "kategoria": "Elektronika (obrazek)",
-      "pytanie": "Jakiego typu tranzystor przedstawia symbol?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/6/66/BJT_NPN_symbol.svg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:BJT_NPN_symbol.svg",
-      "odpowiedzi": {
-        "A": "Bipolarny NPN",
-        "B": "Bipolarny PNP",
-        "C": "MOSFET z kanałem N",
-        "D": "Dioda Zenera"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "To tranzystor bipolarny NPN, w którym strzałka przy emiterze wskazuje kierunek od bazy."
-    },
-    {
-      "id": 224,
-      "poziom": 9,
-      "nagroda": 125000,
-      "kategoria": "Elektronika (obrazek)",
-      "pytanie": "Jaki element przedstawia symbol?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Zener_diode_symbol.svg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Zener_diode_symbol.svg",
-      "odpowiedzi": {
-        "A": "Dioda LED",
-        "B": "Dioda Schottky'ego",
-        "C": "Dioda Zenera",
-        "D": "Kondensator"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "Zagięta kreska katody jest charakterystyczna dla diody Zenera."
-    },
-    {
-      "id": 225,
-      "poziom": 10,
-      "nagroda": 250000,
-      "kategoria": "Liczniki (obrazek)",
-      "pytanie": "Ile różnych stanów przyjmuje licznik Johnsona zbudowany z czterech przerzutników jak na schemacie?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/6/69/Johnson_Counter_4bit.svg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Johnson_Counter_4bit.svg",
-      "odpowiedzi": {
-        "A": "8",
-        "B": "4",
-        "C": "16",
-        "D": "15"
-      },
-      "poprawna": "A",
-      "wyjasnienie": "Licznik Johnsona z n przerzutników ma 2n stanów, czyli 8."
-    },
-    {
-      "id": 226,
-      "poziom": 10,
-      "nagroda": 250000,
-      "kategoria": "Bramki (obrazek)",
-      "pytanie": "Co dzieje się z wyjściem bufora trójstanowego, gdy jego wejście sterujące (enable) jest nieaktywne?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Tristate_buffer.svg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Tristate_buffer.svg",
-      "odpowiedzi": {
-        "A": "Przyjmuje stan 1",
-        "B": "Przyjmuje stan 0",
-        "C": "Kopiuje wejście z opóźnieniem",
-        "D": "Przechodzi w stan wysokiej impedancji (Hi-Z)"
-      },
-      "poprawna": "D",
-      "wyjasnienie": "W stanie Hi-Z wyjście jest odłączone od magistrali."
-    },
-    {
       "id": 227,
       "poziom": 11,
       "nagroda": 500000,
-      "kategoria": "ALU (obrazek)",
-      "pytanie": "Co zwykle zwraca blok ALU (taki jak na symbolu) oprócz wyniku operacji?",
+      "kategoria": "Układy",
+      "pytanie": "Co zwykle zwraca blok ALU oprócz wyniku operacji?",
       "obrazek": "https://upload.wikimedia.org/wikipedia/commons/8/82/ALU_symbol.svg",
       "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:ALU_symbol.svg",
       "odpowiedzi": {
@@ -3476,25 +2298,8 @@ window.MILIONERZY_DATA = {
       "wyjasnienie": "ALU ustawia flagi, np. Z, C, N i V, które wykorzystuje m.in. logika skoków warunkowych."
     },
     {
-      "id": 228,
-      "poziom": 11,
-      "nagroda": 500000,
-      "kategoria": "PWM (obrazek)",
-      "pytanie": "Sygnał sterujący serwem modelarskim ma okres 20 ms. Jaka szerokość impulsu ustawia serwo zwykle w pozycji środkowej?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Servomotor_Timing_Diagram.svg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Servomotor_Timing_Diagram.svg",
-      "odpowiedzi": {
-        "A": "ok. 0,5 ms",
-        "B": "ok. 5 ms",
-        "C": "ok. 1,5 ms",
-        "D": "ok. 10 ms"
-      },
-      "poprawna": "C",
-      "wyjasnienie": "Typowo 1 ms to jedno skrajne położenie, 1,5 ms środek, a 2 ms drugie skrajne."
-    },
-    {
       "id": 229,
-      "poziom": 12,
+      "poziom": 11,
       "nagroda": 1000000,
       "kategoria": "Rejestry (obrazek)",
       "pytanie": "Po ilu taktach zegara bit podany na wejście szeregowe czterobitowego rejestru przesuwającego z przerzutników D trafi na wyjście ostatniego przerzutnika?",
@@ -3515,11 +2320,10 @@ window.MILIONERZY_DATA = {
       "nagroda": 1000000,
       "kategoria": "Mapy Karnaugha (obrazek)",
       "pytanie": "Mapa Karnaugha 4 zmiennych dla funkcji parzystości (XOR/XNOR) ma jedynki rozmieszczone jak szachownica. Co to oznacza dla minimalizacji?",
-      "obrazek": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Karnaugh_map_KV_4x4_XNOR_EXOR.svg",
-      "zrodlo_obrazka": "https://commons.wikimedia.org/wiki/File:Karnaugh_map_KV_4x4_XNOR_EXOR.svg",
+      "obrazek": "https://www.physicsforums.com/attachments/screen-shot-2015-04-19-at-1-58-29-pm-png.82240/",
       "odpowiedzi": {
         "A": "Funkcję można sprowadzić do jednej zmiennej",
-        "B": "Wystarczą dwie grupy po osiem jedynek",
+        "B": "Wystarczą dwie grupy po cztery jedynki",
         "C": "Funkcja jest zawsze równa zeru",
         "D": "Żadne dwie jedynki nie sąsiadują, więc nie da się utworzyć większych grup"
       },
